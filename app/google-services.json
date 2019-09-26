@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "574193847409",
+    "firebase_url": "https://loginproj-5753b.firebaseio.com",
+    "project_id": "loginproj-5753b",
+    "storage_bucket": "loginproj-5753b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574193847409:android:7ca9c04b61d417bbdc9fd0",
+        "android_client_info": {
+          "package_name": "com.example.flexit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "574193847409-8k9jl5pcn3m35l8ni9pfclkvvlta9atr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flexit",
+            "certificate_hash": "419a75ef2251deb83d4140a20b73be2e2197217a"
+          }
+        },
+        {
+          "client_id": "574193847409-946d7asim862ftp06qa8uq7e9ffvlbks.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPRQKU5AjrHb3jUxD2POtRjCOlYsrh4cg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "574193847409-946d7asim862ftp06qa8uq7e9ffvlbks.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
