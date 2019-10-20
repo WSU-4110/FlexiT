@@ -47,8 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         dataBase = FirebaseDatabase.getInstance();
         myRef = dataBase.getReference("Users");
-        //https://www.youtube.com/watch?v=hoF5A30fbu4
-        //https://www.youtube.com/watch?v=4DTgE7qbD_8&list=LLxw5sEAJDjSBQ3uBuqFI8XQ&index=2&t=105s
+
 
 
 
@@ -91,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
                             if(task.isSuccessful()){
                                 //User registration is succcessful
                                 //start profile activity here
-                                Toast.makeText(MainActivity.this, "registration successful",
+                                Toast.makeText(MainActivity.this, "Registration successful",
                                         Toast.LENGTH_SHORT).show();
                                 finish();
                                 startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
