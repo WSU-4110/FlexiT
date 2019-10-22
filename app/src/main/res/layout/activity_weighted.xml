@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WeightedActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="20dp"
+        android:text="Weighted Options"
+        android:textColor="#000"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="77dp"
+        tools:layout_editor_absoluteY="26dp" />
+
+    <view
+        android:id="@+id/youTube_player1"
+        class="com.google.android.youtube.player.YouTubePlayerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="212dp" />
+
+    <Button
+        android:id="@+id/playVideo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="play video"
+        tools:layout_editor_absoluteX="149dp"
+        tools:layout_editor_absoluteY="254dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
