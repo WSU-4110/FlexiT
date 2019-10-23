@@ -7,6 +7,7 @@
     tools:context=".WorkoutActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -14,7 +15,8 @@
         android:text="Workout Options"
         android:textColor="#000"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="72dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="2dp" />
 
     <Button
@@ -22,20 +24,26 @@
         android:layout_width="135dp"
         android:layout_height="79dp"
         android:layout_gravity="center"
+        android:layout_marginTop="112dp"
         android:background="#000"
         android:text="Weighted"
         android:textColor="#fff"
-        tools:layout_editor_absoluteX="138dp"
-        tools:layout_editor_absoluteY="199dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/button_unweighted"
         android:layout_width="138dp"
         android:layout_height="74dp"
         android:layout_gravity="center"
+        android:layout_marginTop="32dp"
         android:background="#000"
         android:text="Unweighted"
         android:textColor="#fff"
-        tools:layout_editor_absoluteX="136dp"
-        tools:layout_editor_absoluteY="311dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_weighted"
+        app:layout_constraintVertical_bias="0.062" />
 </androidx.constraintlayout.widget.ConstraintLayout>

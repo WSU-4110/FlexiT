@@ -20,14 +20,14 @@
 
 
         <Button
-            android:id="@+id/button_findGym"
+            android:id="@+id/button_searchGym"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="4"
-            android:text="Find Gyms" />
+            android:text="Search Gyms" />
 
         <Button
-            android:id="@+id/button_search"
+            android:id="@+id/search_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
@@ -36,19 +36,19 @@
 
     </LinearLayout>
 
-        <com.google.android.material.navigation.NavigationView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="0dp"
-            tools:layout_editor_absoluteX="0dp">
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="0dp"
+        tools:layout_editor_absoluteX="0dp">
 
-            <fragment
-                android:id="@+id/map"
-                android:name="com.google.android.gms.maps.SupportMapFragment"
-                android:layout_width="match_parent"
-                android:layout_height="549dp"
-                tools:context=".MapsActivity" />
-        </com.google.android.material.navigation.NavigationView>
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="549dp"
+            tools:context=".MapsActivity" />
+    </com.google.android.material.navigation.NavigationView>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -84,18 +84,17 @@
     </LinearLayout>
 
 </LinearLayout>
-<!--    <com.google.android.material.navigation.NavigationView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_marginBottom="64dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        tools:layout_editor_absoluteX="0dp">-->
+    <!--    <com.google.android.material.navigation.NavigationView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:layout_marginBottom="64dp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        tools:layout_editor_absoluteX="0dp">-->
 
-<!--        <fragment-->
-<!--            android:id="@+id/map"-->
-<!--            android:name="com.google.android.gms.maps.SupportMapFragment"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="621dp"-->
-<!--            tools:context=".MapsActivity" />-->
-<!--    </com.google.android.material.navigation.NavigationView>-->
-
+    <!--        <fragment-->
+    <!--            android:id="@+id/map"-->
+    <!--            android:name="com.google.android.gms.maps.SupportMapFragment"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="621dp"-->
+    <!--            tools:context=".MapsActivity" />-->
+    <!--    </com.google.android.material.navigation.NavigationView>-->

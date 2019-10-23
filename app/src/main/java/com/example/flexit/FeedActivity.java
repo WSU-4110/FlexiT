@@ -11,6 +11,7 @@ public class FeedActivity extends AppCompatActivity {
 
     private Button map;
     private Button home;
+    private Button workout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +20,14 @@ public class FeedActivity extends AppCompatActivity {
 
         home = (Button) findViewById(R.id.button_home);
         map = (Button) findViewById(R.id.button_map);
+        workout = (Button) findViewById(R.id.button_workout);
+            workout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                    startActivity(new Intent(getApplicationContext(), WorkoutActivity.class));
+                }
+            });
 
         home.setOnClickListener(new View.OnClickListener() {
             @Override
