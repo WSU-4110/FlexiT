@@ -14,6 +14,7 @@ buildscript {
 
         //Added for FireBase
         classpath 'com.google.gms:google-services:4.3.2'
+
     }
 }
 
