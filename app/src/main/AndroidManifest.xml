@@ -37,7 +37,10 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".ScheduleActivity"/>
+<<<<<<< HEAD
         <activity android:name=".MainWatch"/>
+=======
+>>>>>>> 8ab73e2ad0cb799002d84483165c325bdeb071db
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
