@@ -12,7 +12,8 @@ public class FeedActivity extends AppCompatActivity {
     private Button map;
     private Button home;
     private Button workout;
-
+    private Button schedule;
+    private  Button clock;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,13 +22,16 @@ public class FeedActivity extends AppCompatActivity {
         home = (Button) findViewById(R.id.button_home);
         map = (Button) findViewById(R.id.button_map);
         workout = (Button) findViewById(R.id.button_workout);
-            workout.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    finish();
-                    startActivity(new Intent(getApplicationContext(), WorkoutActivity.class));
-                }
-            });
+        schedule = (Button) findViewById(R.id.button_schedule);
+        clock = (Button) findViewById(R.id.button_clock);
+
+        workout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                //startActivity(new Intent(getApplicationContext(),.class));
+            }
+        });
 
         home.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +47,22 @@ public class FeedActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), MapsActivity.class));
             }
         });
+        // scheduler below
+        schedule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                startActivity(new Intent(getApplicationContext(), ScheduleActivity.class));
+            }
+        });
 
+
+        clock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                startActivity(new Intent(getApplicationContext(), MainWatch.class));
+            }
+        });
     }
 }
