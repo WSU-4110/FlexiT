@@ -13,10 +13,7 @@ public class FeedActivity extends AppCompatActivity {
     private Button home;
     private Button workout;
     private Button schedule;
-<<<<<<< HEAD
     private  Button clock;
-=======
->>>>>>> 8ab73e2ad0cb799002d84483165c325bdeb071db
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,10 +23,7 @@ public class FeedActivity extends AppCompatActivity {
         map = (Button) findViewById(R.id.button_map);
         workout = (Button) findViewById(R.id.button_workout);
         schedule = (Button) findViewById(R.id.button_schedule);
-<<<<<<< HEAD
         clock = (Button) findViewById(R.id.button_clock);
-=======
->>>>>>> 8ab73e2ad0cb799002d84483165c325bdeb071db
 
         workout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,11 +47,7 @@ public class FeedActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), MapsActivity.class));
             }
         });
-<<<<<<< HEAD
         // scheduler below
-=======
-        // scheduler below 
->>>>>>> 8ab73e2ad0cb799002d84483165c325bdeb071db
         schedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
