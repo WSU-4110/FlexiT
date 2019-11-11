@@ -46,5 +46,12 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="64dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:layout_editor_absoluteX="0dp" >
+
+        <Button
+            android:id="@+id/button_schedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Schedule " />
+    </com.google.android.material.navigation.NavigationView>
 </androidx.constraintlayout.widget.ConstraintLayout>
