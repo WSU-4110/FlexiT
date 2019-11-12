@@ -1,4 +1,62 @@
 <resources>
     <string name="app_name">Flexit</string>
     <string name="title_activity_maps">Map</string>
+    <string name="login">Sign in </string>
+    <string name="email1">Email</string>
+    <string name="password">Password</string>
+    <string name="forgotten_password">Forgot your ID or Password ?</string>
+    <string name="not_a_menber">Not a member ? </string>
+    <string name="create_an_account">Create an Account</string>
+    <string name="register">Register</string>
+    <string name="Name1">Name </string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="confirmationMessage"><![CDATA[By creating an account you are agreeing to the Terms & Conditions which govern your use of this service.]]></string>
+    <string name="already_have_account">Already have an account ?</string>
+
+
+    //for BMI
+
+    <string name="title_activity_bmi">BMI Calculator</string>
+
+
+    <!-- fragments preferences title & summary  water calculation-->
+    <string name="pref_training_title">Training</string>
+    <string name="pref_weight_title">Weight (kg)</string>
+    <string name="pref_water_need_title">Daily Need</string>
+
+    <string name="pref_notif_sound_title">Sounds</string>
+
+
+
+
+    <string name="cals">cals</string>
+    <string name="select_type">Select Type :</string>
+    <string name="enter_weight">Enter weight :</string>
+    <string name="kg">kg</string>
+    <string name="enter_time">Enter time :</string>
+    <string name="min">min</string>
+    <string name="new_text">New Text</string>
+    <string name="other_size">other size</string>
+    <string name="cancel">cancel</string>
+
+    <string name="men">Men</string>
+    <string name="women">Women</string>
+    <string name="age">Age</string>
+    <string name="yrs">Yrs</string>
+    <string name="weight">Weight</string>
+    <string name="kilogram">Kg</string>
+    <string name="height">Height</string>
+    <string name="cm">Cm</string>
+    <string name="result">Result</string>
+    <string name="reset">Reset</string>
+    <string name="_0_0">0.0</string>
+    <string name="underweight">UnderWeight</string>
+    <string name="hyphen">-</string>
+    <string name="normal">Normal</string>
+    <string name="overweight">OverWeight</string>
+    <string name="obese">Obese</string>
+    <string name="morbidly_obese">Morbidly Obese</string>
+    <string name="from">From</string>
+    <string name="clear">Clear</string>
+    <string name="to">To</string>
 </resources>

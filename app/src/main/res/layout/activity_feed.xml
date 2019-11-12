@@ -59,5 +59,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Schedule " />
+
+        <Button
+            android:id="@+id/button_BMI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="184dp"
+            android:layout_marginBottom="28dp"
+            android:text="BMI" />
     </com.google.android.material.navigation.NavigationView>
 </androidx.constraintlayout.widget.ConstraintLayout>

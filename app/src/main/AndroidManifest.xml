@@ -38,6 +38,7 @@
         <activity android:name=".ProfileActivity" />
         <activity android:name=".ScheduleActivity"/>
         <activity android:name=".MainWatch"/>
+        <activity android:name=".BMIActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
