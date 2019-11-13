@@ -1,5 +1,6 @@
 package com.example.flexit;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -18,6 +19,7 @@ public class MainWatch extends AppCompatActivity {
     ImageView icanchor;
     Chronometer timerHere;
     Animation roundingalone, stopiconmeter;
+    Button Countdown;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +30,7 @@ public class MainWatch extends AppCompatActivity {
         btnStop = findViewById(R.id.btnStop);
         icanchor = findViewById(R.id.icanchor);
         timerHere = findViewById(R.id.timerHere);
-
+        Countdown = findViewById(R.id.button_countdown);
         //load animations
         roundingalone = AnimationUtils.loadAnimation(this, R.anim.roundingalone);
         stopiconmeter = AnimationUtils.loadAnimation(this, R.anim.stopiconchor);
@@ -58,6 +60,15 @@ public class MainWatch extends AppCompatActivity {
                 timerHere.stop();
             }
         });
+
+        Countdown.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+                startActivity(new Intent(getApplicationContext(), StopWatch.class));
+            }
+        });
+
 
     }
 }

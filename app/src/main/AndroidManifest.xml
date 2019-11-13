@@ -15,7 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UnweightedActivity"></activity>
+        <activity android:name=".UnweightedActivity" />
         <activity android:name=".WeightedActivity" />
         <activity android:name=".WorkoutActivity" />
         <!--
@@ -36,9 +36,10 @@
         <activity android:name=".FeedActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".ScheduleActivity"/>
-        <activity android:name=".MainWatch"/>
-        <activity android:name=".BMIActivity"/>
+        <activity android:name=".ScheduleActivity" />
+        <activity android:name=".MainWatch" />
+        <activity android:name=".BMIActivity" />
+        <activity android:name=".StopWatch"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

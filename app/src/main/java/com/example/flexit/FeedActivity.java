@@ -15,6 +15,7 @@ public class FeedActivity extends AppCompatActivity {
     private Button schedule;
     private  Button clock;
     private Button BMI;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +27,7 @@ public class FeedActivity extends AppCompatActivity {
         schedule = (Button) findViewById(R.id.button_schedule);
         clock = (Button) findViewById(R.id.button_clock);
         BMI = (Button) findViewById(R.id.button_BMI);
+
         workout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,6 +75,7 @@ public class FeedActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), BMIActivity.class));
             }
         });
+
 
     }
 }
