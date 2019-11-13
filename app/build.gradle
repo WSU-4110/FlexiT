@@ -47,6 +47,7 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v13:1.0.0'
     implementation 'androidx.room:room-runtime:2.0.0'
     testImplementation 'androidx.room:room-testing:2.0.0'
+    implementation 'androidx.gridlayout:gridlayout:1.0.0'
 
 
 }

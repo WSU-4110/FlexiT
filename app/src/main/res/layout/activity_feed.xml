@@ -4,68 +4,138 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3F51B5"
-    tools:context=".FeedActivity">
+    android:background="@drawable/gradient"
+    tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/button_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Home"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:text="Home" />
+   <ImageView
+       android:id="@+id/imageView5"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="16dp"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:srcCompat="@drawable/newlogo" />
 
-    <Button
-        android:id="@+id/button_map"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Map"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button_home" />
+   <GridLayout
+       android:layout_width="427dp"
+       android:layout_height="477dp"
+       android:layout_marginTop="8dp"
+       android:layout_marginEnd="8dp"
+       android:layout_marginBottom="8dp"
+       android:padding="14dp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.333"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.424">
 
-    <Button
-        android:id="@+id/button_workout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
-        android:layout_marginBottom="8dp"
-        android:text="workout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button_home" />
 
-    <Button
-        android:id="@+id/button_clock"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="196dp"
-        android:layout_marginBottom="8dp"
-        android:text="clocks"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button_home" />
+      <Button
+          android:id="@+id/button_map"
+          android:layout_width="78dp"
+          android:layout_height="78dp"
+          android:layout_row="0"
+          android:layout_rowWeight="1"
+          android:layout_column="2"
+          android:layout_columnWeight="1"
+          android:layout_gravity="fill"
+          android:background="@drawable/maps"
+          android:text="Maps"
+          android:textAllCaps="false"
+          android:textColor="#000000"
+          android:textSize="25sp"/>
 
-    <com.google.android.material.navigation.NavigationView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="64dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="0dp" >
+      <Button
+          android:id="@+id/button_home"
+          android:layout_width="79dp"
+          android:layout_height="79dp"
+          android:layout_row="0"
+          android:layout_rowWeight="1"
+          android:layout_column="0"
+          android:layout_columnWeight="1"
+          android:layout_gravity="fill"
+          android:background="@drawable/home"
+          android:text="Home"
+          android:textAllCaps="false"
+          android:textColor="#FFF"
+          android:textSize="25sp" />
 
-        <Button
-            android:id="@+id/button_schedule"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Schedule " />
+      <Button
+          android:id="@+id/button_schedule"
+          android:layout_width="79dp"
+          android:layout_height="79dp"
+          android:layout_row="0"
+          android:layout_rowWeight="1"
+          android:layout_column="3"
+          android:layout_columnWeight="1"
+          android:layout_gravity="fill"
+          android:background="@drawable/schedule"
+          android:textAllCaps="false"
+          android:textColor="#00574B"
+          android:textSize="25sp"
+          android:text="Scheduler" />
 
-        <Button
-            android:id="@+id/button_BMI"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="184dp"
-            android:layout_marginBottom="28dp"
-            android:text="BMI" />
-    </com.google.android.material.navigation.NavigationView>
+      <Button
+          android:id="@+id/button_clock"
+          android:layout_width="79dp"
+          android:layout_height="79dp"
+          android:layout_row="3"
+          android:layout_rowWeight="1"
+          android:layout_column="3"
+          android:layout_columnWeight="1"
+          android:layout_gravity="fill"
+          android:textAllCaps="false"
+          android:textColor="#FFFFFF"
+          android:textSize="25sp"
+          android:text="Workout Clock"
+          android:background="@drawable/clock"/>
+
+      <Button
+          android:id="@+id/button_BMI"
+          android:layout_width="79dp"
+          android:layout_height="79dp"
+          android:layout_row="3"
+          android:layout_rowWeight="1"
+          android:layout_column="2"
+          android:layout_columnWeight="1"
+          android:layout_gravity="fill"
+          android:background="@drawable/bmi" />
+
+      <Button
+          android:id="@+id/button_workout"
+          android:layout_width="79dp"
+          android:layout_height="79dp"
+          android:layout_row="3"
+          android:layout_rowWeight="1"
+          android:layout_column="0"
+          android:layout_columnWeight="1"
+          android:layout_gravity="fill"
+          android:background="@drawable/workouts"
+          android:text="Workouts"
+          android:textAllCaps="false"
+          android:textColor="#000000"
+          android:textSize="25sp" />
+
+      <Button
+          android:id="@+id/button_other"
+          android:layout_width="79dp"
+          android:layout_height="79dp"
+          android:layout_row="4"
+          android:layout_rowWeight="1"
+          android:layout_column="0"
+          android:layout_columnWeight="1"
+          android:layout_gravity="fill"
+          android:background="@drawable/bgcircle"
+          android:text="Other"
+          android:textAllCaps="false"
+          android:textColor="#8BC34A"
+          android:textSize="25sp" />
+
+
+   </GridLayout>
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
