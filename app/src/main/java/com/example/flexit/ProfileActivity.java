@@ -28,8 +28,9 @@ public class ProfileActivity extends AppCompatActivity {
 
         private FirebaseAuth mAuth;
         private FirebaseUser user;
-        private FirebaseDatabase myFireBaseDB;
-        private DatabaseReference myRef;
+/*        private FirebaseDatabase myFireBaseDB;
+        private DatabaseReference myRef;*/
+        private AddToDB DBinstance;
 
 
         private EditText fName;
@@ -45,7 +46,7 @@ public class ProfileActivity extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_profile);
             mAuth = FirebaseAuth.getInstance();
-            myFireBaseDB = FirebaseDatabase.getInstance();
+/*            myFireBaseDB = FirebaseDatabase.getInstance();*/
             user = mAuth.getCurrentUser();
 
             fName = (EditText) findViewById(R.id.text_fName);
@@ -57,8 +58,9 @@ public class ProfileActivity extends AppCompatActivity {
 
             next = (Button) findViewById(R.id.button_next);
 
-            myRef = myFireBaseDB.getReference("Users");
-
+/*            myRef = myFireBaseDB.getReference("Users");*/
+            DBinstance = AddToDB.getInstance();
+            DBinstance.getTable("Users");
 
 
             next.setOnClickListener(new View.OnClickListener(){
@@ -87,13 +89,25 @@ public class ProfileActivity extends AppCompatActivity {
 
 
                         //Put user profile information into database
-                        myRef.child(user.getUserID()).child("First Name").setValue(user.getfName());
+/*                        myRef.child(user.getUserID()).child("First Name").setValue(user.getfName());
                         myRef.child(user.getUserID()).child("Last Name").setValue(user.getlName());
                         myRef.child(user.getUserID()).child("Age").setValue(user.getAge());
                         myRef.child(user.getUserID()).child("Height").setValue(user.getHeight());
                         myRef.child(user.getUserID()).child("Weight").setValue(user.getWeight());
-                        myRef.child(user.getUserID()).child("Description").setValue(user.getDescription());
-                        finish();
+                        myRef.child(user.getUserID()).child("Description").setValue(user.getDescription());*/
+                        DBinstance.pushToTable(user.getUserID(), "First Name", user.getfName());
+                        DBinstance.pushToTable(user.getUserID(), "Last Name", user.getlName());
+                        DBinstance.pushToTable(user.getUserID(), "Age", user.getAge());
+                        DBinstance.pushToTable(user.getUserID(), "Height", user.getHeight());
+                        DBinstance.pushToTable(user.getUserID(), "Weight", user.getWeight());
+                        DBinstance.pushToTable(user.getUserID(), "Description", user.getDescription());
+
+
+
+
+
+
+                    finish();
                         startActivity(new Intent(getApplicationContext(),
                                 FeedActivity.class));
                 }
