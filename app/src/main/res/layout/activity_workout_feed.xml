@@ -16,6 +16,20 @@
         android:layout_height="match_parent">
     </androidx.viewpager.widget.ViewPager>
 
+<!--    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btnOrder"
+        android:gravity="center"
+        android:layout_centerVertical="true">
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:stepSize="1"/>
+    </RelativeLayout>-->
+
+
     <Button
         android:id="@+id/btnOrder"
         android:text="Button"

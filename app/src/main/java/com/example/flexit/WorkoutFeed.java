@@ -7,10 +7,20 @@ import android.animation.ArgbEvaluator;
 import android.os.Bundle;
 import android.widget.Adapter;
 
+import com.like.LikeButton;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class WorkoutFeed extends AppCompatActivity {
+
+    private static final String TAG = "WorkoutFeed";
+
+    @BindView(R.id.heart_button)
+    LikeButton likeButton;
 
     ViewPager viewPager;
     ModelAdapter adapter;
@@ -23,12 +33,14 @@ public class WorkoutFeed extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workout_feed);
-
+        /* put images in the drawable folder */
+        /* parameters to pass in (image, title, description) */
         models = new ArrayList<>();
-        models.add(new Model(R.drawable.brochure, "Brochure", "Brochure is an informational paper document"));
-        models.add(new Model(R.drawable.sticker, "Sticker", "Sticker is sticky: a type of label"));
-        models.add(new Model(R.drawable.poster, "Poster", "A poster is something that you hang"));
-        models.add(new Model(R.drawable.namecard, "NameCard", "Business cards are cards bearing business information"));
+        models.add(new Model(R.drawable.brochure, "Workout1", "Description 1"));
+        models.add(new Model(R.drawable.sticker, "Workout2", "Description 2"));
+        models.add(new Model(R.drawable.poster, "Workout3", "Description 3"));
+        models.add(new Model(R.drawable.namecard, "Workout4", "Description 4"));
+
 
         adapter = new ModelAdapter(models, this);
 
@@ -43,6 +55,7 @@ public class WorkoutFeed extends AppCompatActivity {
                 getResources().getColor(R.color.color4)};
 
         colors = colors_temp;
+
 
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override

@@ -38,14 +38,6 @@ public class FeedActivity extends AppCompatActivity {
         flashbar = displayQuote();
         flashbar.show();
 
-        workout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-                //startActivity(new Intent(getApplicationContext(),.class));
-            }
-        });
-
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
