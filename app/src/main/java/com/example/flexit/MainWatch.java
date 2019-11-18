@@ -27,8 +27,6 @@ public class MainWatch extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stop_watch);
 
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         btnStart = findViewById(R.id.btnStart);
         btnStop = findViewById(R.id.btnStop);
@@ -76,14 +74,5 @@ public class MainWatch extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
 
-        switch(item.getItemId()){
-            case android.R.id.home:
-                finish();
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 }

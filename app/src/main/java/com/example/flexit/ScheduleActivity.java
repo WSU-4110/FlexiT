@@ -24,8 +24,6 @@ public class ScheduleActivity extends AppCompatActivity {
         super.onCreate(saveIntstantState);
         setContentView(R.layout.activity_schedule);
 
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         SundayBox = (EditText) findViewById(R.id.SundayBox);
         MondayBox = (EditText) findViewById(R.id.MondayBox);
@@ -34,17 +32,5 @@ public class ScheduleActivity extends AppCompatActivity {
         ThursdayBox = (EditText) findViewById(R.id.ThursdayBox);
         FridayBox = (EditText) findViewById(R.id.FridayBox);
         SaturdayBox = (EditText) findViewById(R.id.SaturdayBox);
-
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-
-        switch(item.getItemId()){
-            case android.R.id.home:
-                finish();
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 }
