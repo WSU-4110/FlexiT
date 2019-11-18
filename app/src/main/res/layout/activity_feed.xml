@@ -1,141 +1,259 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context=".FeedActivity">
 
-   <ImageView
-       android:id="@+id/imageView5"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_marginTop="16dp"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent"
-       app:srcCompat="@drawable/newlogo" />
+   <RelativeLayout
+       android:layout_weight="2"
+       android:layout_width="match_parent"
+       android:background="@color/colorPrimary"
+       android:layout_height="0dp">
+
+      <TextView
+          android:id="@+id/textGrid"
+          android:text="FlexiT"
+          android:textSize="40dp"
+          android:textColor="@android:color/white"
+          android:layout_centerInParent="true"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"/>
+   </RelativeLayout>
 
    <GridLayout
-       android:layout_width="427dp"
-       android:layout_height="477dp"
-       android:layout_marginTop="8dp"
-       android:layout_marginEnd="8dp"
-       android:layout_marginBottom="8dp"
-       android:padding="14dp"
-       app:layout_constraintBottom_toBottomOf="parent"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintHorizontal_bias="0.333"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent"
-       app:layout_constraintVertical_bias="0.424">
+       android:columnCount="2"
+       android:rowCount="3"
+       android:alignmentMode="alignMargins"
+       android:columnOrderPreserved="false"
+       android:layout_weight="8"
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:padding="14dp">
+
+      <!-- Row 1 -->
+      <!-- Column 1 -->
 
 
-      <Button
-          android:id="@+id/button_map"
-          android:layout_width="78dp"
-          android:layout_height="78dp"
-          android:layout_row="0"
-          android:layout_rowWeight="1"
-          android:layout_column="2"
+      <androidx.cardview.widget.CardView
+          android:layout_width="0dp"
+          android:layout_height="0dp"
           android:layout_columnWeight="1"
-          android:layout_gravity="fill"
-          android:background="@drawable/maps"
-          android:text="Maps"
-          android:textAllCaps="false"
-          android:textColor="#000000"
-          android:textSize="25sp"/>
-
-      <Button
-          android:id="@+id/button_home"
-          android:layout_width="79dp"
-          android:layout_height="79dp"
-          android:layout_row="0"
           android:layout_rowWeight="1"
-          android:layout_column="0"
-          android:layout_columnWeight="1"
-          android:layout_gravity="fill"
-          android:background="@drawable/home"
-          android:text="Home"
-          android:textAllCaps="false"
-          android:textColor="#FFF"
-          android:textSize="25sp" />
+          android:layout_marginBottom="16dp"
+          android:layout_marginLeft="16dp"
+          android:layout_marginRight="16dp"
+          app:cardElevation="8dp"
+          app:cardCornerRadius="8dp">
 
-      <Button
-          android:id="@+id/button_schedule"
-          android:layout_width="79dp"
-          android:layout_height="79dp"
-          android:layout_row="0"
+         <LinearLayout
+             android:layout_gravity="center_horizontal|center_vertical"
+             android:layout_margin="16dp"
+             android:orientation="vertical"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/button_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/home" />
+         </LinearLayout>
+      </androidx.cardview.widget.CardView>
+
+      <!-- Column 2 -->
+
+
+      <androidx.cardview.widget.CardView
+          android:layout_width="0dp"
+          android:layout_height="0dp"
+          android:layout_columnWeight="1"
           android:layout_rowWeight="1"
-          android:layout_column="3"
-          android:layout_columnWeight="1"
-          android:layout_gravity="fill"
-          android:background="@drawable/schedule"
-          android:textAllCaps="false"
-          android:textColor="#00574B"
-          android:textSize="25sp"
-          android:text="Scheduler" />
+          android:layout_marginBottom="16dp"
+          android:layout_marginLeft="16dp"
+          android:layout_marginRight="16dp"
+          app:cardElevation="8dp"
+          app:cardCornerRadius="8dp">
 
-      <Button
-          android:id="@+id/button_clock"
-          android:layout_width="79dp"
-          android:layout_height="79dp"
-          android:layout_row="3"
+         <LinearLayout
+             android:layout_gravity="center_horizontal|center_vertical"
+             android:layout_margin="16dp"
+             android:orientation="vertical"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/button_schedule"
+                android:background="@drawable/schedule"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="Person"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+         </LinearLayout>
+      </androidx.cardview.widget.CardView>
+
+      <!-- Row 2 -->
+      <!-- Column 1 -->
+
+
+      <androidx.cardview.widget.CardView
+          android:layout_width="0dp"
+          android:layout_height="0dp"
+          android:layout_columnWeight="1"
           android:layout_rowWeight="1"
-          android:layout_column="3"
-          android:layout_columnWeight="1"
-          android:layout_gravity="fill"
-          android:textAllCaps="false"
-          android:textColor="#FFFFFF"
-          android:textSize="25sp"
-          android:text="Workout Clock"
-          android:background="@drawable/clock"/>
+          android:layout_marginBottom="16dp"
+          android:layout_marginLeft="16dp"
+          android:layout_marginRight="16dp"
+          app:cardElevation="8dp"
+          app:cardCornerRadius="8dp">
 
-      <Button
-          android:id="@+id/button_BMI"
-          android:layout_width="79dp"
-          android:layout_height="79dp"
-          android:layout_row="3"
+         <LinearLayout
+             android:layout_gravity="center_horizontal|center_vertical"
+             android:layout_margin="16dp"
+             android:orientation="vertical"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/button_workout"
+                android:background="@drawable/workouts"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="Person"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+         </LinearLayout>
+      </androidx.cardview.widget.CardView>
+
+
+      <!-- Column 2 -->
+
+
+      <androidx.cardview.widget.CardView
+          android:layout_width="0dp"
+          android:layout_height="0dp"
+          android:layout_columnWeight="1"
           android:layout_rowWeight="1"
-          android:layout_column="2"
-          android:layout_columnWeight="1"
-          android:layout_gravity="fill"
-          android:background="@drawable/bmi" />
+          android:layout_marginBottom="16dp"
+          android:layout_marginLeft="16dp"
+          android:layout_marginRight="16dp"
+          app:cardElevation="8dp"
+          app:cardCornerRadius="8dp">
 
-      <Button
-          android:id="@+id/button_workout"
-          android:layout_width="79dp"
-          android:layout_height="79dp"
-          android:layout_row="3"
+         <LinearLayout
+             android:layout_gravity="center_horizontal|center_vertical"
+             android:layout_margin="16dp"
+             android:orientation="vertical"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content">
+
+
+            <Button
+                android:id="@+id/button_clock"
+                android:background="@drawable/android_timer_icon"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="Person"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+         </LinearLayout>
+      </androidx.cardview.widget.CardView>
+
+      <!-- Row 3 -->
+      <!-- Column 1 -->
+      <androidx.cardview.widget.CardView
+          android:layout_width="0dp"
+          android:layout_height="0dp"
+          android:layout_columnWeight="1"
           android:layout_rowWeight="1"
-          android:layout_column="0"
-          android:layout_columnWeight="1"
-          android:layout_gravity="fill"
-          android:background="@drawable/workouts"
-          android:text="Workouts"
-          android:textAllCaps="false"
-          android:textColor="#000000"
-          android:textSize="25sp" />
+          android:layout_marginBottom="16dp"
+          android:layout_marginLeft="16dp"
+          android:layout_marginRight="16dp"
+          app:cardElevation="8dp"
+          app:cardCornerRadius="8dp">
 
-      <Button
-          android:id="@+id/button_other"
-          android:layout_width="79dp"
-          android:layout_height="79dp"
-          android:layout_row="4"
+         <LinearLayout
+             android:layout_gravity="center_horizontal|center_vertical"
+             android:layout_margin="16dp"
+             android:orientation="vertical"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/button_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/maps"/>
+            <TextView
+                android:text="Person"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+         </LinearLayout>
+      </androidx.cardview.widget.CardView>
+
+      <!-- Column 2 -->
+      <androidx.cardview.widget.CardView
+          android:layout_width="0dp"
+          android:layout_height="0dp"
+          android:layout_columnWeight="1"
           android:layout_rowWeight="1"
-          android:layout_column="0"
-          android:layout_columnWeight="1"
-          android:layout_gravity="fill"
-          android:background="@drawable/bgcircle"
-          android:text="Other"
-          android:textAllCaps="false"
-          android:textColor="#8BC34A"
-          android:textSize="25sp" />
+          android:layout_marginBottom="16dp"
+          android:layout_marginLeft="16dp"
+          android:layout_marginRight="16dp"
+          app:cardElevation="8dp"
+          app:cardCornerRadius="8dp">
 
+         <LinearLayout
+             android:layout_gravity="center_horizontal|center_vertical"
+             android:layout_margin="16dp"
+             android:orientation="vertical"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content">
 
+            <Button
+                android:id="@+id/button_BMI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/bmi"/>
+            <TextView
+                android:text="Person"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+         </LinearLayout>
+      </androidx.cardview.widget.CardView>
    </GridLayout>
-
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

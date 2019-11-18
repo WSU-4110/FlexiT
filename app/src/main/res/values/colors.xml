@@ -13,6 +13,10 @@
     <color name="colorAccent">#D81B60</color>
     <color name="colorBackground">#151B29</color>
     <color name="colorYellow">#F5FA55</color>
+    <color name="color1">#424549</color>
+    <color name="color2">#7e455e</color>
+    <color name="color3">#796e25</color>
+    <color name="color4">#59717c</color>
 
 
 </resources>

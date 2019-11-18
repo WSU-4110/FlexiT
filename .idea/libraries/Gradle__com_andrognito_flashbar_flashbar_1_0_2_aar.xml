@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.andrognito.flashbar:flashbar:1.0.2@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a85bb8537fd1975ba24339c1100d18ce/jetified-flashbar-1.0.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a85bb8537fd1975ba24339c1100d18ce/jetified-flashbar-1.0.2/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.andrognito.flashbar/flashbar/1.0.2/ad769a25445edf16abed3c2b559a7bb92674855a/flashbar-1.0.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.andrognito.flashbar/flashbar/1.0.2/9811ad61389837de14f289ce1adeae25405e2c82/flashbar-1.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
