@@ -21,6 +21,7 @@ public class FeedActivity extends AppCompatActivity {
     private Button schedule;
     private  Button clock;
     private Button BMI;
+    private Button music;
     private Flashbar flashbar = null;
 
     @Override
@@ -34,6 +35,7 @@ public class FeedActivity extends AppCompatActivity {
         schedule = (Button) findViewById(R.id.button_schedule);
         clock = (Button) findViewById(R.id.button_clock);
         BMI = (Button) findViewById(R.id.button_BMI);
+        music =(Button)findViewById(R.id.button_music);
 
         flashbar = displayQuote();
         flashbar.show();
@@ -85,6 +87,13 @@ public class FeedActivity extends AppCompatActivity {
             }
         });
 
+        music.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                startActivity(new Intent(getApplicationContext(), MusicActivity.class));
+            }
+        });
 
     }
 

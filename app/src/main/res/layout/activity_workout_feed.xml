@@ -31,8 +31,8 @@
 
 
     <Button
-        android:id="@+id/btnOrder"
-        android:text="Button"
+        android:id="@+id/button_back"
+        android:text="back"
         android:textColor="#fff"
         android:background="@drawable/round"
         android:paddingLeft="30dp"
