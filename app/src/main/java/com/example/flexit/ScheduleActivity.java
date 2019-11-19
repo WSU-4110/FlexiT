@@ -33,4 +33,10 @@ public class ScheduleActivity extends AppCompatActivity {
         FridayBox = (EditText) findViewById(R.id.FridayBox);
         SaturdayBox = (EditText) findViewById(R.id.SaturdayBox);
     }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
+
 }
