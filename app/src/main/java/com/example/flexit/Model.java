@@ -1,5 +1,6 @@
 package com.example.flexit;
 
+
 public class Model {
 
     private int image;

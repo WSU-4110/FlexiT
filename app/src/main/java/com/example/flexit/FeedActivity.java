@@ -43,14 +43,14 @@ public class FeedActivity extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                /*finish();*/
                 startActivity(new Intent(getApplicationContext(), FeedActivity.class));
             }
         });
         map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                /*finish();*/
                 startActivity(new Intent(getApplicationContext(), MapsActivity.class));
             }
         });
@@ -58,7 +58,7 @@ public class FeedActivity extends AppCompatActivity {
         schedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                /*finish();*/
                 startActivity(new Intent(getApplicationContext(), ScheduleActivity.class));
             }
         });
@@ -66,7 +66,7 @@ public class FeedActivity extends AppCompatActivity {
         workout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+               /* finish();*/
                 startActivity(new Intent(getApplicationContext(), WorkoutFeed.class));
             }
         });
@@ -74,7 +74,7 @@ public class FeedActivity extends AppCompatActivity {
         clock.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                /*finish();*/
                 startActivity(new Intent(getApplicationContext(), MainWatch.class));
             }
         });
@@ -82,7 +82,7 @@ public class FeedActivity extends AppCompatActivity {
         BMI.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                /*finish();*/
                 startActivity(new Intent(getApplicationContext(), BMIActivity.class));
             }
         });
@@ -106,6 +106,4 @@ public class FeedActivity extends AppCompatActivity {
                 .enableSwipeToDismiss()
                 .build();
     }
-
-
 }

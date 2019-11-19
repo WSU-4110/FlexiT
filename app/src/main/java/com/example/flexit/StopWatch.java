@@ -216,6 +216,12 @@ public class StopWatch extends AppCompatActivity implements View.OnClickListener
 
 
     }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
+
 
 
 }
