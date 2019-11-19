@@ -8,9 +8,6 @@ import android.os.Bundle;
 import android.widget.Adapter;
 
 import com.like.LikeButton;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,9 +15,6 @@ import java.util.List;
 public class WorkoutFeed extends AppCompatActivity {
 
     private static final String TAG = "WorkoutFeed";
-
-    @BindView(R.id.heart_button)
-    LikeButton likeButton;
 
     ViewPager viewPager;
     ModelAdapter adapter;
