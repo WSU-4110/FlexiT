@@ -5,9 +5,13 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.animation.ArgbEvaluator;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Adapter;
+import android.widget.Toast;
 
 import com.like.LikeButton;
+import com.like.OnAnimationEndListener;
+import com.like.OnLikeListener;
 
 import java.util.ArrayList;
 import java.util.List;
