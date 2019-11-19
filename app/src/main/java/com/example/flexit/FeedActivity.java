@@ -97,6 +97,4 @@ public class FeedActivity extends AppCompatActivity {
                 .enableSwipeToDismiss()
                 .build();
     }
-
-
 }
