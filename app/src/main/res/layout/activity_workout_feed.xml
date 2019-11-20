@@ -30,16 +30,5 @@
     </RelativeLayout>-->
 
 
-    <Button
-        android:id="@+id/button_back"
-        android:text="back"
-        android:textColor="#fff"
-        android:background="@drawable/round"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="60dp"
-        android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+
 </RelativeLayout>
