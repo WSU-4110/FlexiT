@@ -29,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
     private Button button;
-
+    private Button forgetPass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,18 @@ public class LoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
         button = (Button)findViewById(R.id.login);
+
+        forgetPass = findViewById(R.id.ForgetPassword);
+        forgetPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (v == forgetPass){
+                    startActivity(new Intent(getApplicationContext(),
+                            ForgotPassActivity.class));
+                }
+            }
+        });
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,4 +86,6 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
     }
+
+
 }
