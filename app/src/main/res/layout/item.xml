@@ -10,51 +10,54 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="20dp"
         android:layout_margin="8dp">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="500dp">
 
             <ImageView
                 android:id="@+id/image"
-                android:src="@drawable/brochure"
                 android:layout_width="match_parent"
+                android:layout_height="200dp"
                 android:scaleType="centerCrop"
-                android:layout_height="200dp"/>
+                android:src="@drawable/brochure" />
+
             <TextView
                 android:id="@+id/title"
-                android:textColor="#262626"
-                android:layout_below="@id/image"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="16dp"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
                 android:text="Workout"
-                android:textSize="16sp"
-                android:layout_height="wrap_content"/>
+                android:textColor="#262626"
+                android:textSize="16sp" />
+
             <TextView
                 android:id="@+id/desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/title"
-                android:layout_marginTop="3dp"
                 android:layout_marginLeft="16dp"
+                android:layout_marginTop="3dp"
                 android:layout_marginRight="16dp"
-                android:maxLines="4"
                 android:drawablePadding="10dp"
                 android:ellipsize="end"
-                android:text="Description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:maxLines="9"
+                android:text="Description" />
 
             <RelativeLayout
-                android:gravity="right"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/desc">
+                android:layout_below="@+id/desc"
+                android:gravity="right">
 
                 <com.like.LikeButton
-                    app:icon_type="heart"
-                    app:icon_size="25dp"
                     android:id="@+id/heart_button"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    app:icon_size="25dp"
+                    app:icon_type="heart" />
             </RelativeLayout>
 
         </RelativeLayout>
