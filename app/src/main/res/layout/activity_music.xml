@@ -45,7 +45,6 @@
             android:id="@+id/pause_button"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_toLeftOf=""
             android:layout_weight="0"
             android:background="@drawable/pause"
             android:text="" />
