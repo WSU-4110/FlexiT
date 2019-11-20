@@ -50,5 +50,11 @@
             android:text="" />
     </RelativeLayout>
 
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:textColor="@color/blue"
+        android:textSize="20sp"
+        android:text="Check out Spicify for more music"/>
 </LinearLayout>
