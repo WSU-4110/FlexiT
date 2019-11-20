@@ -88,6 +88,16 @@ public class FeedActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        if(true){
+            return;
+        }
+        else{
+            super.onBackPressed();
+        }
+    }
+
     private Flashbar displayQuote() {
         return new Flashbar.Builder(this)
                 .gravity(Flashbar.Gravity.BOTTOM)
