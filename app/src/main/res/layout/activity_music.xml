@@ -15,20 +15,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:baselineAligned="false"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="80dp"
         android:layout_marginRight="1dp"
         android:src="@drawable/music" />
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="-20dp"
         android:paddingLeft="120dp">
     <Button
         android:id="@+id/play_button"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_weight="0"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="60dp"
         android:background="@drawable/play"></Button>
 
     <Button
@@ -44,7 +45,7 @@
             android:id="@+id/pause_button"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="-8dp"
+            android:layout_toLeftOf=""
             android:layout_weight="0"
             android:background="@drawable/pause"
             android:text="" />
