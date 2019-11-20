@@ -99,8 +99,6 @@ public class BMIActivity extends AppCompatActivity {
         frameLayout.addView(view);
     }
 
-
-
     public void check(View view) {
         int checkedId = rg.getCheckedRadioButtonId();
         if (R.id.rb1 == checkedId) {
@@ -437,9 +435,10 @@ public class BMIActivity extends AppCompatActivity {
             age.setText("");
         }
     }
-
-
-
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 
 }
