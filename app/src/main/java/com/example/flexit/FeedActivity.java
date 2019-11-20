@@ -16,7 +16,6 @@ import com.andrognito.flashbar.Flashbar;
 public class FeedActivity extends AppCompatActivity {
 
     private Button map;
-    private Button home;
     private Button workout;
     private Button schedule;
     private  Button clock;
@@ -29,7 +28,7 @@ public class FeedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed);
 
-        home = (Button) findViewById(R.id.button_home);
+
         map = (Button) findViewById(R.id.button_map);
         workout = (Button) findViewById(R.id.button_workout);
         schedule = (Button) findViewById(R.id.button_schedule);
@@ -40,13 +39,6 @@ public class FeedActivity extends AppCompatActivity {
         flashbar = displayQuote();
         flashbar.show();
 
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                /*finish();*/
-                startActivity(new Intent(getApplicationContext(), FeedActivity.class));
-            }
-        });
         map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -90,7 +82,6 @@ public class FeedActivity extends AppCompatActivity {
         music.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
                 startActivity(new Intent(getApplicationContext(), MusicActivity.class));
             }
         });
