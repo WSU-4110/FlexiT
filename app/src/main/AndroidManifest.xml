@@ -17,8 +17,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-
-
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -39,11 +37,12 @@
         <activity android:name=".ProfileActivity" />
         <activity android:name=".ScheduleActivity" />
         <activity android:name=".MainWatch" />
-        <activity android:name=".MusicActivity"></activity>
-        <activity android:name=".ForgotPassActivity"></activity>
+        <activity android:name=".MusicActivity" />
+        <activity android:name=".ForgotPassActivity" />
         <activity android:name=".BMIActivity" />
         <activity android:name=".StopWatch" />
         <activity android:name=".WorkoutFeed" />
+        <activity android:name=".ReadDBActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

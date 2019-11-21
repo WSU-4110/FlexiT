@@ -21,7 +21,9 @@ public class FeedActivity extends AppCompatActivity {
     private  Button clock;
     private Button BMI;
     private Button music;
+    private ImageView profile;
     private Flashbar flashbar = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,8 @@ public class FeedActivity extends AppCompatActivity {
         clock = (Button) findViewById(R.id.button_clock);
         BMI = (Button) findViewById(R.id.button_BMI);
         music =(Button)findViewById(R.id.button_music);
+        profile =(ImageView) findViewById(R.id.button_viewprofile);
+
 
         flashbar = displayQuote();
         flashbar.show();
@@ -86,6 +90,12 @@ public class FeedActivity extends AppCompatActivity {
             }
         });
 
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), ReadDBActivity.class));
+            }
+        });
     }
 
     @Override

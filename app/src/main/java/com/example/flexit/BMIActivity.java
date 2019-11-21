@@ -114,7 +114,7 @@ public class BMIActivity extends AppCompatActivity {
 
     private float bmiCalculator(int a, int b) {
         if (b == 0 || a == 0) {
-            makeText(this, "Enter valid details", LENGTH_SHORT).show();
+            Toast.makeText(this, "Enter valid details", Toast.LENGTH_SHORT).show();
             return 0;
         }
         double temp = (b * 703.0) / (a * a * 1.0);
@@ -389,12 +389,12 @@ public class BMIActivity extends AppCompatActivity {
             else
                 showdatawomen(temp1, age3);
         } else if (t1 == 0 || t2 == 0 || t3 == 0) {
-            makeText(this, "Choose the Required Fields", LENGTH_SHORT).show();
+            Toast.makeText(this, "Choose the Required Fields", Toast.LENGTH_SHORT).show();
             age3 = ageit();
             height3 = heightit();
             weight3 = weightit();
         } else {
-            makeText(this, "Choose Gender", LENGTH_SHORT).show();
+            Toast.makeText(this, "Choose Gender", Toast.LENGTH_SHORT).show();
         }
     }
 
