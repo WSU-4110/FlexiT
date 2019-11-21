@@ -25,7 +25,7 @@
         android:layout_marginLeft="8dp" />
 
     <ImageView
-        android:id="@+id/icanchor"
+        android:id="@+id/arrow_view"
         android:layout_width="358dp"
         android:layout_height="357dp"
         android:layout_marginStart="8dp"
@@ -40,7 +40,7 @@
      />
 
     <Chronometer
-        android:id="@+id/timerHere"
+        android:id="@+id/time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/bgcircle"
@@ -51,10 +51,10 @@
         app:layout_constraintHorizontal_bias="0.498" />
 
     <Button
-        android:id="@+id/btnStart"
+        android:id="@+id/button_Start"
         android:layout_width="280dp"
         android:layout_height="55dp"
-        android:layout_below="@+id/timerHere"
+        android:layout_below="@+id/time"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:background="@drawable/bgbtngreen"
@@ -65,10 +65,10 @@
         app:layout_constraintHorizontal_bias="0.495" />
 
     <Button
-        android:id="@+id/btnStop"
+        android:id="@+id/button_stop"
         android:layout_width="276dp"
         android:layout_height="55dp"
-        android:layout_below="@+id/btnStart"
+        android:layout_below="@+id/button_Start"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
         android:background="@drawable/bgbtnred"
@@ -83,7 +83,7 @@
         android:id="@+id/button_countdown"
         android:layout_width="276dp"
         android:layout_height="55dp"
-        android:layout_below="@+id/btnStart"
+        android:layout_below="@+id/button_Start"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="94dp"
         android:background="@color/action"

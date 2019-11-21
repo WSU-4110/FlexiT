@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task){
                         try{
-                            //check if registration was successful
+                            //checkGender if registration was successful
                             if(task.isSuccessful()){
                                 //User registration is succcessful
                                 //start profile activity here

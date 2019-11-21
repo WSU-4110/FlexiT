@@ -10,7 +10,6 @@
     <string name="register">Register</string>
     <string name="Name1">Name </string>
     <string name="confirm_password">Confirm Password</string>
-    <string name="confirmationMessage"><![CDATA[By creating an account you are agreeing to the Terms & Conditions which govern your use of this service.]]></string>
     <string name="already_have_account">Already have an account ?</string>
 
     <string name="hint_minute">Minute</string>
@@ -22,12 +21,6 @@
     <string name="title_activity_bmi">BMI Calculator</string>
 
 
-    <!-- fragments preferences title & summary  water calculation-->
-    <string name="pref_training_title">Training</string>
-    <string name="pref_weight_title">Weight (kg)</string>
-    <string name="pref_water_need_title">Daily Need</string>
-
-    <string name="pref_notif_sound_title">Sounds</string>
 
 
     <string name="cals">cals</string>

@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -16,11 +15,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainWatch extends AppCompatActivity {
 
-    Button btnStop, btnStart;
-    ImageView icanchor;
-    Chronometer timerHere;
-    Animation roundingalone, stopiconmeter;
-    Button Countdown;
+    Button Stop, Start;
+    ImageView arrow;
+    Chronometer timer;
+    Animation round, stoparrow;
+    Button watch_countdown;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,42 +27,40 @@ public class MainWatch extends AppCompatActivity {
         setContentView(R.layout.activity_stop_watch);
 
 
-        btnStart = findViewById(R.id.btnStart);
-        btnStop = findViewById(R.id.btnStop);
-        icanchor = findViewById(R.id.icanchor);
-        timerHere = findViewById(R.id.timerHere);
-        Countdown = findViewById(R.id.button_countdown);
-        //load animations
-        roundingalone = AnimationUtils.loadAnimation(this, R.anim.roundingalone);
-        stopiconmeter = AnimationUtils.loadAnimation(this, R.anim.stopiconchor);
-        //import font
+        Start = findViewById(R.id.button_Start);
+        Stop = findViewById(R.id.button_stop);
+        arrow = findViewById(R.id.arrow_view);
+        timer = findViewById(R.id.time);
+        watch_countdown = findViewById(R.id.button_countdown);
+
+        round = AnimationUtils.loadAnimation(this, R.anim.round_animate);
+        stoparrow = AnimationUtils.loadAnimation(this, R.anim.stop_animate);
         Typeface MMedium = Typeface.createFromAsset(getAssets(),"fonts/MMedium.ttf");
         //customize  font
-        btnStart.setTypeface(MMedium);
-        btnStop.setTypeface(MMedium);
+        Start.setTypeface(MMedium);
+        Stop.setTypeface(MMedium);
 
-        btnStart.setOnClickListener(new View.OnClickListener() {
+        Start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //passing Animation
-                icanchor.startAnimation(roundingalone);
+                arrow.startAnimation(round);
 
-                //start time
-                timerHere.setBase(SystemClock.elapsedRealtime());
-                timerHere.start();
+                timer.setBase(SystemClock.elapsedRealtime());
+                timer.start();
             }
         });
 
-        btnStop.setOnClickListener(new View.OnClickListener() {
+        Stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                icanchor.setAnimation(stopiconmeter);
+                arrow.setAnimation(stoparrow);
 
-                timerHere.stop();
+                timer.stop();
             }
         });
 
-        Countdown.setOnClickListener(new View.OnClickListener() {
+        watch_countdown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();

@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -26,11 +25,11 @@ public class StopWatch extends AppCompatActivity implements View.OnClickListener
 
     private TimerStatus timerStatus = TimerStatus.STOPPED;
 
-    private ProgressBar progressBarCircle;
-    private EditText editTextMinute;
+    private ProgressBar CircleStopWatch;
+    private EditText enterMinute;
     private TextView textViewTime;
-    private ImageView imageViewReset;
-    private ImageView imageViewStartStop;
+    private ImageView ResettimeView;
+    private ImageView StoptimeView;
     private CountDownTimer countDownTimer;
 
 
@@ -53,33 +52,28 @@ public class StopWatch extends AppCompatActivity implements View.OnClickListener
      * method to initialize the views
      */
     private void initViews() {
-        progressBarCircle = (ProgressBar) findViewById(R.id.progressBarCircle);
-        editTextMinute = (EditText) findViewById(R.id.editTextMinute);
-        textViewTime = (TextView) findViewById(R.id.textViewTime);
-        imageViewReset = (ImageView) findViewById(R.id.imageViewReset);
-        imageViewStartStop = (ImageView) findViewById(R.id.imageViewStartStop);
+        CircleStopWatch = (ProgressBar) findViewById(R.id.progressStopWatch);
+        enterMinute = (EditText) findViewById(R.id.entertextMinute);
+        textViewTime = (TextView) findViewById(R.id.ViewTime);
+        ResettimeView = (ImageView) findViewById(R.id.ResetView);
+        StoptimeView = (ImageView) findViewById(R.id.StartView);
     }
 
     /**
      * method to initialize the click listeners
      */
     private void initListeners() {
-        imageViewReset.setOnClickListener(this);
-        imageViewStartStop.setOnClickListener(this);
+        ResettimeView.setOnClickListener(this);
+        StoptimeView.setOnClickListener(this);
     }
 
-    /**
-     * implemented method to listen clicks
-     *
-     * @param view
-     */
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.imageViewReset:
+            case R.id.ResetView:
                 reset();
                 break;
-            case R.id.imageViewStartStop:
+            case R.id.StartView:
                 startStop();
                 break;
         }
@@ -94,22 +88,20 @@ public class StopWatch extends AppCompatActivity implements View.OnClickListener
     }
 
 
-    /**
-     * method to start and stop count down timer
-     */
+
     private void startStop() {
         if (timerStatus == TimerStatus.STOPPED) {
 
             // call to initialize the timer values
-            setTimerValues();
+            setTimer();
             // call to initialize the progress bar values
-            setProgressBarValues();
+            setWatch();
             // showing the reset icon
-            imageViewReset.setVisibility(View.VISIBLE);
+            ResettimeView.setVisibility(View.VISIBLE);
             // changing play icon to stop icon
-            imageViewStartStop.setImageResource(R.drawable.icon_stop);
+            StoptimeView.setImageResource(R.drawable.icon_stop);
             // making edit text not editable
-            editTextMinute.setEnabled(false);
+            enterMinute.setEnabled(false);
             // changing the timer status to started
             timerStatus = TimerStatus.STARTED;
             // call to start the count down timer
@@ -118,11 +110,11 @@ public class StopWatch extends AppCompatActivity implements View.OnClickListener
         } else {
 
             // hiding the reset icon
-            imageViewReset.setVisibility(View.GONE);
+            ResettimeView.setVisibility(View.GONE);
             // changing stop icon to start icon
-            imageViewStartStop.setImageResource(R.drawable.icon_start);
+            StoptimeView.setImageResource(R.drawable.icon_start);
             // making edit text editable
-            editTextMinute.setEnabled(true);
+            enterMinute.setEnabled(true);
             // changing the timer status to stopped
             timerStatus = TimerStatus.STOPPED;
             stopCountDownTimer();
@@ -131,49 +123,45 @@ public class StopWatch extends AppCompatActivity implements View.OnClickListener
 
     }
 
-    /**
-     * method to initialize the values for count down timer
-     */
-    private void setTimerValues() {
+
+    private void setTimer() {
         int time = 0;
-        if (!editTextMinute.getText().toString().isEmpty()) {
-            // fetching value from edit text and type cast to integer
-            time = Integer.parseInt(editTextMinute.getText().toString().trim());
+        if (!enterMinute.getText().toString().isEmpty()) {
+
+            time = Integer.parseInt(enterMinute.getText().toString().trim());
         } else {
-            // toast message to fill edit text
+
             Toast.makeText(getApplicationContext(), getString(R.string.message_minutes), Toast.LENGTH_LONG).show();
         }
         // assigning values after converting to milliseconds
         timeCountInMilliSeconds = time * 60 * 1000;
     }
 
-    /**
-     * method to start count down timer
-     */
+
     private void startCountDownTimer() {
 
         countDownTimer = new CountDownTimer(timeCountInMilliSeconds, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
 
-                textViewTime.setText(hmsTimeFormatter(millisUntilFinished));
+                textViewTime.setText(TimeFormat(millisUntilFinished));
 
-                progressBarCircle.setProgress((int) (millisUntilFinished / 1000));
+                CircleStopWatch.setProgress((int) (millisUntilFinished / 1000));
 
             }
 
             @Override
             public void onFinish() {
 
-                textViewTime.setText(hmsTimeFormatter(timeCountInMilliSeconds));
+                textViewTime.setText(TimeFormat(timeCountInMilliSeconds));
                 // call to initialize the progress bar values
-                setProgressBarValues();
+                setWatch();
                 // hiding the reset icon
-                imageViewReset.setVisibility(View.GONE);
+                ResettimeView.setVisibility(View.GONE);
                 // changing stop icon to start icon
-                imageViewStartStop.setImageResource(R.drawable.icon_start);
+                StoptimeView.setImageResource(R.drawable.icon_start);
                 // making edit text editable
-                editTextMinute.setEnabled(true);
+                enterMinute.setEnabled(true);
                 // changing the timer status to stopped
                 timerStatus = TimerStatus.STOPPED;
             }
@@ -192,20 +180,14 @@ public class StopWatch extends AppCompatActivity implements View.OnClickListener
     /**
      * method to set circular progress bar values
      */
-    private void setProgressBarValues() {
+    private void setWatch() {
 
-        progressBarCircle.setMax((int) timeCountInMilliSeconds / 1000);
-        progressBarCircle.setProgress((int) timeCountInMilliSeconds / 1000);
+        CircleStopWatch.setMax((int) timeCountInMilliSeconds / 1000);
+        CircleStopWatch.setProgress((int) timeCountInMilliSeconds / 1000);
     }
 
 
-    /**
-     * method to convert millisecond to time format
-     *
-     * @param milliSeconds
-     * @return HH:mm:ss time formatted string
-     */
-    private String hmsTimeFormatter(long milliSeconds) {
+    private String TimeFormat(long milliSeconds) {
 
         String hms = String.format("%02d:%02d:%02d",
                 TimeUnit.MILLISECONDS.toHours(milliSeconds),

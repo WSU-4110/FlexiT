@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import androidx.appcompat.app.AlertDialog;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.MenuItem;
@@ -26,21 +26,16 @@ import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
-import com.example.flexit.R;
-
-import static android.widget.Toast.*;
-
 
 public class BMIActivity extends AppCompatActivity {
 
-    int age2 = 0, age3 = 0, height2 = 0, height3 = 0, weight2 = 0, weight3 = 0, gender = -1, t1 = 0, t2 = 0, t3 = 0, t4 = 0;
+    int TempAge2 = 0, TempAge3 = 0, temp_height1 = 0, temp_height3 = 0, temp_weight2 = 0, temp_weight3 = 0, gender = -1, var1 = 0, var2 = 0, var3 = 0, var4 = 0;
     float temp1 = 0, temp2 = 0, temp3 = 0;
-    String age1 = "", height1 = "", weight1 = "";
+    String Temp_Age1 = "", height1 = "", weight1 = "";
 
     // For the bmi window
     EditText age, height, weight;
 
-    //Used to add some time so that user cannot directly press and exity out of the activity
     boolean doubleBackToExitPressedOnce = false;
 
     //For the BMI Window
@@ -101,7 +96,7 @@ public class BMIActivity extends AppCompatActivity {
         frameLayout.addView(view);
     }
 
-    public void check(View view) {
+    public void checkGender(View view) {
         int checkedId = rg.getCheckedRadioButtonId();
         if (R.id.rb1 == checkedId) {
             gender = 0;
@@ -112,7 +107,7 @@ public class BMIActivity extends AppCompatActivity {
 
 
 
-    private float bmiCalculator(int a, int b) {
+    private float bmi(int a, int b) {
         if (b == 0 || a == 0) {
             Toast.makeText(this, "Enter valid details", Toast.LENGTH_SHORT).show();
             return 0;
@@ -123,55 +118,55 @@ public class BMIActivity extends AppCompatActivity {
     }
 
     //take age from user
-    private int ageit() {
-        t1 = 1;
+    private int GetAge() {
+        var1 = 1;
         age = findViewById(R.id.age);
-        age1 = age.getText().toString();
+        Temp_Age1 = age.getText().toString();
 
         try {
-            age2 = Integer.parseInt(age1);
+            TempAge2 = Integer.parseInt(Temp_Age1);
         } catch (NumberFormatException e) {
             // Toast.makeText(this,"Only Digits Allowed",Toast.LENGTH_SHORT).show();
         }
-        return age2;
+        return TempAge2;
 
 
     }
 
     //Take height from user
-    private int heightit() {
-        t2 = 1;
+    private int Getheight() {
+        var2 = 1;
         height = findViewById(R.id.height);
         height1 = height.getText().toString();
         try {
-            height2 = Integer.parseInt(height1);
+            temp_height1 = Integer.parseInt(height1);
         } catch (NumberFormatException e) {
             // Toast.makeText(this,"Only Digits Allowed",Toast.LENGTH_SHORT).show();
         }
-        return height2;
+        return temp_height1;
     }
 
     //take weight from user
-    private int weightit() {
-        t3 = 1;
+    private int GetWeight() {
+        var3 = 1;
         weight = findViewById(R.id.weight);
         weight1 = weight.getText().toString();
         try {
-            weight2 = Integer.parseInt(weight1);
+            temp_weight2 = Integer.parseInt(weight1);
         } catch (NumberFormatException e) {
             //Toast.makeText(this,"Only Digits Allowed",Toast.LENGTH_SHORT).show();
         }
-        return weight2;
+        return temp_weight2;
     }
 
     @SuppressLint("SetTextI18n")
-    private void showdatamen(float f, int a) {
-        TextView under = findViewById(R.id.underweight);
-        TextView normal = findViewById(R.id.normal);
-        TextView over = findViewById(R.id.overweight);
-        TextView obese = findViewById(R.id.obese);
+    private void DisplayMaleData(float f, int a) {
+        TextView under = findViewById(R.id.underweightView);
+        TextView normal = findViewById(R.id.normalView);
+        TextView over = findViewById(R.id.overweightView);
+        TextView obese = findViewById(R.id.obeseView);
         TextView morobese = findViewById(R.id.morobese);
-        TextView tv = findViewById(R.id.result);
+        TextView tv = findViewById(R.id.resultView);
         if (a < 10) {
             under.setText("< 14.6");
             normal.setText("14.6 - 21.3");
@@ -271,13 +266,13 @@ public class BMIActivity extends AppCompatActivity {
     }
 
     @SuppressLint("SetTextI18n")
-    private void showdatawomen(float f, int a) {
-        TextView under = findViewById(R.id.underweight);
-        TextView normal = findViewById(R.id.normal);
-        TextView over = findViewById(R.id.overweight);
-        TextView obese = findViewById(R.id.obese);
+    private void DisplayFemaleData(float f, int a) {
+        TextView under = findViewById(R.id.underweightView);
+        TextView normal = findViewById(R.id.normalView);
+        TextView over = findViewById(R.id.overweightView);
+        TextView obese = findViewById(R.id.obeseView);
         TextView morobese = findViewById(R.id.morobese);
-        TextView tv = findViewById(R.id.result);
+        TextView tv = findViewById(R.id.resultView);
         if (a < 10) {
             under.setText("< 14.2");
             normal.setText("14.2 - 20.6");
@@ -378,21 +373,21 @@ public class BMIActivity extends AppCompatActivity {
 
     public void result(View view) {
         Button button = findViewById(R.id.res);
-        age3 = ageit();
-        height3 = heightit();
-        weight3 = weightit();
-        if ((gender == 0 || gender == 1) && t1 == 1 && t2 == 1 && t3 == 1) {
-            temp1 = bmiCalculator(height3, weight3);
-            t4 = 1;
+        TempAge3 = GetAge();
+        temp_height3 = Getheight();
+        temp_weight3 = GetWeight();
+        if ((gender == 0 || gender == 1) && var1 == 1 && var2 == 1 && var3 == 1) {
+            temp1 = bmi(temp_height3, temp_weight3);
+            var4 = 1;
             if (gender == 0)
-                showdatamen(temp1, age3);
+                DisplayMaleData(temp1, TempAge3);
             else
-                showdatawomen(temp1, age3);
-        } else if (t1 == 0 || t2 == 0 || t3 == 0) {
+                DisplayFemaleData(temp1, TempAge3);
+        } else if (var1 == 0 || var2 == 0 || var3 == 0) {
             Toast.makeText(this, "Choose the Required Fields", Toast.LENGTH_SHORT).show();
-            age3 = ageit();
-            height3 = heightit();
-            weight3 = weightit();
+            TempAge3 = GetAge();
+            temp_height3 = Getheight();
+            temp_weight3 = GetWeight();
         } else {
             Toast.makeText(this, "Choose Gender", Toast.LENGTH_SHORT).show();
         }
@@ -403,30 +398,30 @@ public class BMIActivity extends AppCompatActivity {
         animation.setDuration(600);
         Button button = findViewById(R.id.reset);
         button.startAnimation(animation);
-        if (t4 != 0) {
-            TextView under = findViewById(R.id.underweight);
-            TextView normal = findViewById(R.id.normal);
-            TextView over = findViewById(R.id.overweight);
-            TextView obese = findViewById(R.id.obese);
+        if (var4 != 0) {
+            TextView under = findViewById(R.id.underweightView);
+            TextView normal = findViewById(R.id.normalView);
+            TextView over = findViewById(R.id.overweightView);
+            TextView obese = findViewById(R.id.obeseView);
             TextView morobese = findViewById(R.id.morobese);
-            age2 = 0;
-            age3 = 0;
-            height2 = 0;
-            height3 = 0;
-            weight2 = 0;
-            weight3 = 0;
+            TempAge2 = 0;
+            TempAge3 = 0;
+            temp_height1 = 0;
+            temp_height3 = 0;
+            temp_weight2 = 0;
+            temp_weight3 = 0;
             gender = -1;
-            t1 = 0;
-            t4 = 0;
-            t2 = 0;
-            t3 = 0;
+            var1 = 0;
+            var4 = 0;
+            var2 = 0;
+            var3 = 0;
             temp1 = 0;
             temp2 = 0;
             temp3 = 0;
-            age1 = "";
+            Temp_Age1 = "";
             height1 = "";
             weight1 = "";
-            TextView t = findViewById(R.id.result);
+            TextView t = findViewById(R.id.resultView);
             t.setText("0.0");
             t.setBackgroundColor(Color.parseColor("#FFCDCDC6"));
             rg.clearCheck();

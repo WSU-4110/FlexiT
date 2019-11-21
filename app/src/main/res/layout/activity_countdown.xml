@@ -7,7 +7,7 @@
     android:background="@drawable/gradient">
 
     <ProgressBar
-        android:id="@+id/progressBarCircle"
+        android:id="@+id/progressStopWatch"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="270dp"
         android:layout_height="270dp"
@@ -20,10 +20,10 @@
         android:rotation="-90" />
 
     <EditText
-        android:id="@+id/editTextMinute"
+        android:id="@+id/entertextMinute"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textViewTime"
+        android:layout_above="@+id/ViewTime"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
         android:gravity="center"
@@ -37,7 +37,7 @@
         android:textColorHint="@color/colorYellow" />
 
     <TextView
-        android:id="@+id/textViewTime"
+        android:id="@+id/ViewTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -46,20 +46,20 @@
         android:textSize="40sp" />
 
     <ImageView
-        android:id="@+id/imageViewReset"
+        android:id="@+id/ResetView"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_below="@+id/textViewTime"
+        android:layout_below="@+id/ViewTime"
         android:layout_centerInParent="true"
         android:layout_marginTop="30dp"
         app:srcCompat="@drawable/icon_reset"
         android:visibility="gone" />
 
     <ImageView
-        android:id="@+id/imageViewStartStop"
+        android:id="@+id/StartView"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_below="@+id/progressBarCircle"
+        android:layout_below="@+id/progressStopWatch"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         app:srcCompat="@drawable/icon_start" />
