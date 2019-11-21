@@ -28,6 +28,8 @@ import java.text.NumberFormat;
 
 import com.example.flexit.R;
 
+import static android.widget.Toast.*;
+
 
 public class BMIActivity extends AppCompatActivity {
 
@@ -112,10 +114,10 @@ public class BMIActivity extends AppCompatActivity {
 
     private float bmiCalculator(int a, int b) {
         if (b == 0 || a == 0) {
-            Toast.makeText(this, "Enter valid details", Toast.LENGTH_SHORT).show();
+            makeText(this, "Enter valid details", LENGTH_SHORT).show();
             return 0;
         }
-        double temp = (b * 10000.0) / (a * a * 1.0);
+        double temp = (b * 703.0) / (a * a * 1.0);
         float f = (float) temp;
         return f;
     }
@@ -125,12 +127,15 @@ public class BMIActivity extends AppCompatActivity {
         t1 = 1;
         age = findViewById(R.id.age);
         age1 = age.getText().toString();
+
         try {
             age2 = Integer.parseInt(age1);
         } catch (NumberFormatException e) {
             // Toast.makeText(this,"Only Digits Allowed",Toast.LENGTH_SHORT).show();
         }
         return age2;
+
+
     }
 
     //Take height from user
@@ -384,12 +389,12 @@ public class BMIActivity extends AppCompatActivity {
             else
                 showdatawomen(temp1, age3);
         } else if (t1 == 0 || t2 == 0 || t3 == 0) {
-            Toast.makeText(this, "Choose the Required Fields", Toast.LENGTH_SHORT).show();
+            makeText(this, "Choose the Required Fields", LENGTH_SHORT).show();
             age3 = ageit();
             height3 = heightit();
             weight3 = weightit();
         } else {
-            Toast.makeText(this, "Choose Gender", Toast.LENGTH_SHORT).show();
+            makeText(this, "Choose Gender", LENGTH_SHORT).show();
         }
     }
 

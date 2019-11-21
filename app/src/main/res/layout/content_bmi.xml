@@ -113,14 +113,15 @@
                     android:inputType="number"
                     android:id="@+id/weight"
                     android:layout_weight="1.5" />
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/kilogram"
-                    android:textColor="#468f58"
+                    android:layout_weight="1"
                     android:padding="10dp"
-                    android:textSize="18sp"
-                    android:layout_weight="1"  />
+                    android:text="@string/pound"
+                    android:textColor="#468f58"
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -142,14 +143,15 @@
                     android:inputType="number"
                     android:id="@+id/height"
                     android:layout_weight="1.5" />
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/cm"
-                    android:textColor="#468f58"
+                    android:layout_weight="1"
                     android:padding="10dp"
-                    android:textSize="18sp"
-                    android:layout_weight="1"  />
+                    android:text="@string/Inch"
+                    android:textColor="#468f58"
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <TextView
