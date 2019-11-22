@@ -22,6 +22,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 
+
+
 //https://www.youtube.com/watch?v=hoF5A30fbu4
 //https://www.youtube.com/watch?v=4DTgE7qbD_8&list=LLxw5sEAJDjSBQ3uBuqFI8XQ&index=2&t=105s
 public class ReadDBActivity extends AppCompatActivity {
@@ -29,6 +31,9 @@ public class ReadDBActivity extends AppCompatActivity {
    TextView height, weight, age, name;
     Button info;
     DatabaseReference reff;
+    private FirebaseAuth mAuth;
+    private FirebaseUser user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,12 +44,15 @@ public class ReadDBActivity extends AppCompatActivity {
         age = (TextView)findViewById(R.id.AgeView);
         name = (TextView)findViewById(R.id.NameView);
         info = (Button)findViewById(R.id.button_viewinfo);
+        mAuth = FirebaseAuth.getInstance();
+        user = mAuth.getCurrentUser();
+        final String userID = user.getUid();
 
         info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Users").child("1jzKX5iJgcZlKS5NtLcOAJewutX2");
+                reff = FirebaseDatabase.getInstance().getReference().child("Users").child(userID);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
