@@ -40,7 +40,7 @@ public class ReadDBActivity extends AppCompatActivity {
         setContentView(R.layout.activity_read_db);
 
         height = (TextView)findViewById(R.id.heightview);
-        weight = (TextView)findViewById(R.id.WeightView);
+        weight = (TextView)findViewById(R.id.weighttview);
         age = (TextView)findViewById(R.id.AgeView);
         name = (TextView)findViewById(R.id.NameView);
         info = (Button)findViewById(R.id.button_viewinfo);

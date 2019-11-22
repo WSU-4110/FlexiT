@@ -74,14 +74,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="20dp"
-                android:text="@string/height"/>
+                android:text="Height:"/>
 
             <TextView
+                android:layout_marginLeft="5dp"
                 android:id="@+id/heightview"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/height" />
+                android:textSize="17sp"
+                android:gravity="center"
+                android:text="" />
         </LinearLayout>
         <LinearLayout
             android:layout_marginTop="25dp"
@@ -100,15 +102,17 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:paddingLeft="20dp"
-                android:text="@string/weight"
+                android:text="Weight:"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/WeightView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/weight" />
+                android:layout_marginLeft="5dp"
+                android:id="@+id/weighttview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="17sp"
+                android:gravity="center"
+                android:text="" />
         </LinearLayout>
         <LinearLayout
             android:layout_marginTop="25dp"
@@ -127,15 +131,17 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:paddingLeft="20dp"
-                android:text="Age"
+                android:text="Age:"
                 android:textStyle="bold" />
 
             <TextView
+                android:layout_marginLeft="5dp"
                 android:id="@+id/AgeView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Age" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="17sp"
+                android:gravity="center"
+                android:text="" />
         </LinearLayout>
         <LinearLayout
             android:layout_marginTop="25dp"
@@ -154,15 +160,17 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:paddingLeft="20dp"
-                android:text="name"
+                android:text="Name:"
                 android:textStyle="bold" />
 
             <TextView
+                android:layout_marginLeft="5dp"
                 android:id="@+id/NameView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Name" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="17sp"
+                android:gravity="center"
+                android:text="" />
         </LinearLayout>
     </LinearLayout>
 

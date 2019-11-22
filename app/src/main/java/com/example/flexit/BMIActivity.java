@@ -28,7 +28,7 @@ import java.text.NumberFormat;
 
 
 // cited reference to code is on " https://github.com/Samina019/WeightManagementAndroid/blob/8cb70e55e7f64ae338d0f0495337ba300588504d/app/src/main/java/developers/weightmanagement/BMI/BMIActivity.java"
-// that was the inspiration for code 
+// that was the inspiration for code
 public class BMIActivity extends AppCompatActivity {
 
     int TempAge2 = 0, TempAge3 = 0, temp_height1 = 0, temp_height3 = 0, temp_weight2 = 0, temp_weight3 = 0, gender = -1, var1 = 0, var2 = 0, var3 = 0, var4 = 0;
