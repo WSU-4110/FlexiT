@@ -5,6 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     tools:context="com.example.flexit.MainActivity">
 
     <LinearLayout
@@ -14,13 +15,13 @@
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="440dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:padding="20dp"
             android:text="Profile"
             android:textAlignment="center"
-            android:textColor="#000"
+            android:textColor="@color/white"
             android:textSize="30sp" />
 
         <EditText
@@ -29,6 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:hint="First Name"
+            android:background="@color/white"
             android:padding="10dp" />
 
         <EditText
@@ -37,7 +39,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:hint="Last Name"
-            android:padding="10dp" />
+            android:padding="10dp"
+            android:background="@color/white"/>
 
         <EditText
             android:id="@+id/text_age"
@@ -45,7 +48,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:hint="Age"
-            android:padding="10dp" />
+            android:padding="10dp"
+            android:background="@color/white"/>
 
         <EditText
             android:id="@+id/text_height"
@@ -53,7 +57,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:hint="Height (in)"
-            android:padding="10dp" />
+            android:padding="10dp"
+            android:background="@color/white"/>
 
         <EditText
             android:id="@+id/text_weight"
@@ -61,15 +66,17 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:hint="Weight"
-            android:padding="10dp" />
+            android:padding="10dp"
+            android:background="@color/white"/>
 
         <EditText
             android:id="@+id/text_description"
             android:layout_width="match_parent"
             android:layout_height="93dp"
             android:layout_margin="5dp"
-            android:hint="Description"
-            android:padding="10dp" />
+            android:hint="Enter your fitness goal"
+            android:padding="10dp"
+            android:background="@color/white"/>
 
     </LinearLayout>
 
@@ -78,5 +85,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:background="@drawable/bgbtnred"
+        android:drawableRight="@android:drawable/ic_menu_send"
+        android:drawableTint="@color/black"
         android:text="Next" />
 </LinearLayout>
