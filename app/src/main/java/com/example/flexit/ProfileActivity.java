@@ -95,7 +95,7 @@ public class ProfileActivity extends AppCompatActivity {
                         myRef.child(user.getUserID()).child("Description").setValue(user.getDescription());
                         finish();
                         startActivity(new Intent(getApplicationContext(),
-                                FeedActivity.class));
+                                WelcomeActivity.class));
                 }
             });
 
