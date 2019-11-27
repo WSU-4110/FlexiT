@@ -18,6 +18,7 @@ public class FeedActivity extends AppCompatActivity {
     private Button map;
     private Button workout;
     private Button schedule;
+    private Button upload;
     private  Button clock;
     private Button BMI;
     private Button music;
@@ -29,7 +30,6 @@ public class FeedActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed);
-
 
         map = (Button) findViewById(R.id.button_map);
         workout = (Button) findViewById(R.id.button_workout);
@@ -96,6 +96,7 @@ public class FeedActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), ReadDBActivity.class));
             }
         });
+
     }
 
     @Override
