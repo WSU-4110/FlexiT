@@ -1,70 +1,31 @@
 package com.example.flexit;
 
+import android.os.Bundle;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.media.MediaPlayer;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+public class MusicActivity extends AppCompatActivity {
 
-public class MusicActivity extends AppCompatActivity implements View.OnClickListener {
-
-    Button play, pause, stop;
-    MediaPlayer mediaPlayer;
-    int pausePosition;
+    private ArrayList<getUserSong> insertGetUserSong;
+    private ListView songList;
+    private UserSongAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music);
 
-        play =(Button)findViewById(R.id.play_button);
-        pause=(Button)findViewById(R.id.pause_button);
-        stop=(Button)findViewById(R.id.stop_button);
+        songList = (ListView) findViewById(R.id.songList);
+        insertGetUserSong = new ArrayList<>();
+        insertGetUserSong.add(new getUserSong("baby shark", "unknown", R.raw.babyshark));
+        insertGetUserSong.add(new getUserSong("GOMD", "Jcole", R.raw.jcole));
+        insertGetUserSong.add(new getUserSong("Someone you loved ", "Lewis Capaldi ", R.raw.syl));
+        insertGetUserSong.add(new getUserSong("Kal Ho Naa Ho", "Sonu Nigam ", R.raw.srk));
 
-        play.setOnClickListener(this);
-        pause.setOnClickListener(this);
-        stop.setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch(v.getId()){
-
-            case R.id.play_button:
-                if(mediaPlayer==null) {
-
-                    mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.jcole);
-                    mediaPlayer.start();
-                }
-                else if(!mediaPlayer.isPlaying()){
-                    mediaPlayer.seekTo(pausePosition);
-                    mediaPlayer.start();
-                }
-                break;
-
-            case R.id.pause_button:
-                if(mediaPlayer!=null){
-                    mediaPlayer.pause();
-                    pausePosition=mediaPlayer.getCurrentPosition();
-
-                }
-                break;
-
-            case R.id.stop_button:
-                if(mediaPlayer!=null){
-                    mediaPlayer.stop();
-                    mediaPlayer=null;
-                }
-                break;
-
-
-        }
-
-    }
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        finish();
+        adapter = new UserSongAdapter(this, R.layout.content_musc, insertGetUserSong);
+        songList.setAdapter(adapter);
     }
 }
