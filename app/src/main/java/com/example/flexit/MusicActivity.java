@@ -24,6 +24,8 @@ public class MusicActivity extends AppCompatActivity {
         insertGetUserSong.add(new getUserSong("GOMD", "Jcole", R.raw.jcole));
         insertGetUserSong.add(new getUserSong("Someone you loved ", "Lewis Capaldi ", R.raw.syl));
         insertGetUserSong.add(new getUserSong("Kal Ho Naa Ho", "Sonu Nigam ", R.raw.srk));
+        insertGetUserSong.add(new getUserSong("Sexy and I know it ", "LMFAO ", R.raw.lmfao));
+        insertGetUserSong.add(new getUserSong("Campfire Song ", "SpongeBob Square Pants ", R.raw.campfire));
 
         adapter = new UserSongAdapter(this, R.layout.content_musc, insertGetUserSong);
         songList.setAdapter(adapter);
