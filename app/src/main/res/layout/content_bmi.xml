@@ -15,15 +15,15 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbarSize="4dp"
+        android:scrollbarSize="5dp"
         android:smoothScrollbar="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"
+            android:paddingTop="19dp"
+            android:paddingBottom="19dp"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
             android:background="@drawable/border_shadow">
@@ -40,8 +40,8 @@
                     android:layout_weight="1"
                     android:text="@string/men"
                     android:textColor="#4CAF50"
-                    android:paddingLeft="20dp"
-                    android:id="@+id/rb1"
+                    android:paddingLeft="21dp"
+                    android:id="@+id/menButton"
                     android:onClick="checkGender"
                     tools:ignore="RtlHardcoded,RtlSymmetry" />
                 <RadioButton
@@ -50,8 +50,8 @@
                     android:layout_weight="1"
                     android:text="@string/women"
                     android:textColor="#4CAF50"
-                    android:paddingLeft="20dp"
-                    android:id="@+id/rb2"
+                    android:paddingLeft="21dp"
+                    android:id="@+id/womenButton"
                     android:onClick="checkGender"
                     tools:ignore="RtlHardcoded,RtlSymmetry" />
             </RadioGroup>
@@ -75,22 +75,22 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="@string/age"
-                    android:padding="10dp"
-                    android:textSize="18sp"
+                    android:padding="11dp"
+                    android:textSize="19sp"
                     android:layout_weight="1"  />
                 <EditText
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:id="@+id/age"
-                    android:layout_weight="1.5" />
+                    android:layout_weight="2" />
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="@string/yrs"
                     android:textColor="#468f58"
-                    android:padding="10dp"
-                    android:textSize="18sp"
+                    android:padding="11dp"
+                    android:textSize="19sp"
                     android:layout_weight="1"  />
             </LinearLayout>
 
@@ -104,21 +104,21 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="@string/weight"
-                    android:padding="10dp"
-                    android:textSize="18sp"
+                    android:padding="11dp"
+                    android:textSize="19sp"
                     android:layout_weight="1"  />
                 <EditText
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:id="@+id/weight"
-                    android:layout_weight="1.5" />
+                    android:layout_weight="2" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:padding="10dp"
+                    android:padding="12dp"
                     android:text="@string/pound"
                     android:textColor="#468f58"
                     android:textSize="18sp" />
@@ -134,24 +134,24 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="@string/height"
-                    android:padding="10dp"
-                    android:textSize="18sp"
+                    android:padding="11dp"
+                    android:textSize="19sp"
                     android:layout_weight="1"  />
                 <EditText
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:id="@+id/height"
-                    android:layout_weight="1.5" />
+                    android:layout_weight="2" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:padding="10dp"
+                    android:padding="11dp"
                     android:text="@string/Inch"
                     android:textColor="#468f58"
-                    android:textSize="18sp" />
+                    android:textSize="19sp" />
             </LinearLayout>
 
             <TextView
@@ -168,23 +168,23 @@
                 android:orientation="horizontal">
                 <Button
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
+                    android:layout_height="48dp"
                     android:text="@string/result"
                     android:drawableLeft="@drawable/result"
                     android:textSize="18sp"
                     android:layout_weight="1"
-                    android:id="@+id/res"
-                    android:onClick="result"
+                    android:id="@+id/BMIResult"
+                    android:onClick="userResult"
                     tools:ignore="RtlHardcoded" />
                 <Button
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
+                    android:layout_height="49dp"
                     android:drawableLeft="@drawable/reset"
                     android:text="@string/reset"
                     android:textSize="18sp"
-                    android:onClick="reset"
+                    android:onClick="resetResult"
                     android:layout_weight="1"
-                    android:id="@+id/reset"
+                    android:id="@+id/BMIReset"
                     tools:ignore="RtlHardcoded" />
             </LinearLayout>
             <TextView
@@ -195,18 +195,20 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:background="#FFBABABA"/>
+
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:id="@+id/resultView"
-                android:padding="10dp"
-                android:layout_marginRight="4dp"
+                android:layout_width="381dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="4dp"
-                android:textAlignment="center"
+                android:layout_marginRight="4dp"
+                android:background="#d6d6d3"
+                android:padding="10dp"
                 android:text="@string/_0_0"
+                android:textAlignment="center"
                 android:textColor="#fefeff"
-                android:textSize="18sp"
-                android:background="#d6d6d3"/>
+                android:textSize="18sp" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -225,7 +227,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textSize="18sp"
+                    android:textSize="19sp"
                     android:text="@string/underweight"
                     android:gravity="center"
                     android:textColor="#48acda"
@@ -240,7 +242,7 @@
                     android:gravity="center"
                     android:textColor="#48acda"
                     android:id="@+id/underweightView"
-                    android:padding="5dp" />
+                    android:padding="6dp" />
 
             </LinearLayout>
 
@@ -250,13 +252,13 @@
                 android:orientation="horizontal" >
                 <TextView
                     android:layout_width="0dp"
-                    android:textSize="18sp"
+                    android:textSize="19sp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="@string/normal"
                     android:textColor="#42cd3a"
-                    android:padding="5dp"/>
+                    android:padding="6dp"/>
                 <TextView
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -265,7 +267,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/normalView"
                     android:textColor="#42cd3a"
-                    android:padding="5dp"
+                    android:padding="6dp"
                     android:text="@string/hyphen" />
             </LinearLayout>
             <LinearLayout
@@ -289,7 +291,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/overweightView"
                     android:textColor="#F30BDE"
-                    android:padding="5dp"
+                    android:padding="6dp"
                     android:text="@string/hyphen" />
             </LinearLayout>
 
@@ -301,11 +303,11 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textSize="18sp"
+                    android:textSize="19sp"
                     android:gravity="center"
                     android:textColor="#ff9900"
                     android:text="@string/obese"
-                    android:padding="5dp"/>
+                    android:padding="6dp"/>
                 <TextView
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -314,7 +316,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/obeseView"
                     android:textColor="#ff9900"
-                    android:padding="5dp"
+                    android:padding="6dp"
                     android:text="@string/hyphen" />
             </LinearLayout>
             <LinearLayout
@@ -325,11 +327,11 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textSize="18sp"
+                    android:textSize="19sp"
                     android:gravity="center"
                     android:textColor="#ff0400"
                     android:text="@string/morbidly_obese"
-                    android:padding="5dp"/>
+                    android:padding="6dp"/>
                 <TextView
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -337,7 +339,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/morobese"
                     android:textColor="#eb0400"
-                    android:padding="5dp"
+                    android:padding="6dp"
                     android:textSize="18sp"
                     android:text="@string/hyphen" />
             </LinearLayout>

@@ -80,7 +80,7 @@ public class StopWatch extends AppCompatActivity implements View.OnClickListener
     }
 
     /**
-     * method to reset count down timer
+     * method to resetResult count down timer
      */
     private void reset() {
         stopCountDownTimer();
@@ -96,7 +96,7 @@ public class StopWatch extends AppCompatActivity implements View.OnClickListener
             setTimer();
             // call to initialize the progress bar values
             setWatch();
-            // showing the reset icon
+            // showing the resetResult icon
             ResettimeView.setVisibility(View.VISIBLE);
             // changing play icon to stop icon
             StoptimeView.setImageResource(R.drawable.icon_stop);
@@ -109,7 +109,7 @@ public class StopWatch extends AppCompatActivity implements View.OnClickListener
 
         } else {
 
-            // hiding the reset icon
+            // hiding the resetResult icon
             ResettimeView.setVisibility(View.GONE);
             // changing stop icon to start icon
             StoptimeView.setImageResource(R.drawable.icon_start);
@@ -156,7 +156,7 @@ public class StopWatch extends AppCompatActivity implements View.OnClickListener
                 textViewTime.setText(TimeFormat(timeCountInMilliSeconds));
                 // call to initialize the progress bar values
                 setWatch();
-                // hiding the reset icon
+                // hiding the resetResult icon
                 ResettimeView.setVisibility(View.GONE);
                 // changing stop icon to start icon
                 StoptimeView.setImageResource(R.drawable.icon_start);

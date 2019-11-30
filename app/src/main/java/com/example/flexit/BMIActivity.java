@@ -21,17 +21,16 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
-
 
 // cited reference to code is on " https://github.com/Samina019/WeightManagementAndroid/blob/8cb70e55e7f64ae338d0f0495337ba300588504d/app/src/main/java/developers/weightmanagement/BMI/BMIActivity.java"
 // that was the inspiration for code
 public class BMIActivity extends AppCompatActivity {
 
-    int TempAge2 = 0, TempAge3 = 0, temp_height1 = 0, temp_height3 = 0, temp_weight2 = 0, temp_weight3 = 0, gender = -1, var1 = 0, var2 = 0, var3 = 0, var4 = 0;
+    int TempAge2 = 0, TempAge3 = 0;
+            int temp_height1 = 0, temp_height3 = 0;
+                    int temp_weight2 = 0, temp_weight3 = 0;
+                        int gender = -1;
+                            int var1 = 0, var2 = 0, var3 = 0, var4 = 0;
     float temp1 = 0, temp2 = 0, temp3 = 0;
     String Temp_Age1 = "", height1 = "", weight1 = "";
 
@@ -40,8 +39,7 @@ public class BMIActivity extends AppCompatActivity {
 
     boolean doubleBackToExitPressedOnce = false;
 
-    //For the BMI Window
-    private RadioGroup rg;
+    private RadioGroup group;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -55,25 +53,17 @@ public class BMIActivity extends AppCompatActivity {
 
     };
 
-    //This method takes a big decimal number and convert that to the exponent from and scale is mantissa
-    private static String format(BigDecimal x, int scale) {
-        NumberFormat formatter = new DecimalFormat("0.0E0");
-        formatter.setRoundingMode(RoundingMode.HALF_UP);
-        formatter.setMinimumFractionDigits(scale);
-        return formatter.format(x);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
 
-        // Initially set the BMI the main homepage
-        setTitle("BMI Calculator");
+        setTitle(" Flexit BMI");
         // To change the color of the action Bar
 
         setContentView(R.layout.activity_bmi);
-        rg = findViewById(R.id.rg);
+        group = findViewById(R.id.rg);
 
         //To remove the focus from the activity when the activity starts
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
@@ -83,38 +73,35 @@ public class BMIActivity extends AppCompatActivity {
     }
 
 
-    private void change_layout(int selectedItem) {
-        // get your outer Frame layout
+    private void getSelection(int userSelection) {
         FrameLayout frameLayout = findViewById(R.id.content);
         View view = null;
-        if (selectedItem == 0) {
-            //Add the content bmi layout to Inflator
+        if (userSelection == 0) {
             view = getLayoutInflater().inflate(R.layout.content_bmi, frameLayout, false);
         }
-        if (selectedItem == 1) {
-            //Add the content bmi layout to Inflator
+        if (userSelection == 1) {
         }
         frameLayout.removeAllViews();
         frameLayout.addView(view);
     }
 
     public void checkGender(View view) {
-        int checkedId = rg.getCheckedRadioButtonId();
-        if (R.id.rb1 == checkedId) {
+        int checkedId = group.getCheckedRadioButtonId();
+        if (R.id.menButton == checkedId) {
             gender = 0;
-        } else if (R.id.rb2 == checkedId) {
+        } else if (R.id.womenButton == checkedId) {
             gender = 1;
         }
     }
 
 
 
-    private float bmi(int a, int b) {
-        if (b == 0 || a == 0) {
+    private float bmi(int userHeight, int userWeight) {
+        if (userWeight == 0 || userHeight == 0) {
             Toast.makeText(this, "Enter valid details", Toast.LENGTH_SHORT).show();
             return 0;
         }
-        double temp = (b * 703.0) / (a * a * 1.0);
+        double temp = (userWeight * 703.0) / (userHeight * userHeight * 1.0);
         float f = (float) temp;
         return f;
     }
@@ -128,7 +115,6 @@ public class BMIActivity extends AppCompatActivity {
         try {
             TempAge2 = Integer.parseInt(Temp_Age1);
         } catch (NumberFormatException e) {
-            // Toast.makeText(this,"Only Digits Allowed",Toast.LENGTH_SHORT).show();
         }
         return TempAge2;
 
@@ -162,106 +148,106 @@ public class BMIActivity extends AppCompatActivity {
     }
 
     @SuppressLint("SetTextI18n")
-    private void DisplayMaleData(float f, int a) {
+    private void DisplayMaleData(float userResult, int metrics) {
         TextView under = findViewById(R.id.underweightView);
         TextView normal = findViewById(R.id.normalView);
         TextView over = findViewById(R.id.overweightView);
         TextView obese = findViewById(R.id.obeseView);
         TextView morobese = findViewById(R.id.morobese);
         TextView tv = findViewById(R.id.resultView);
-        if (a < 10) {
+        if (metrics < 10) {
             under.setText("< 14.6");
             normal.setText("14.6 - 21.3");
             over.setText("21.3 - 25.0");
             obese.setText("> 25.0");
             morobese.setText("-");
-            if (f == 0) {
+            if (userResult == 0) {
                 tv.setText("--");
                 tv.setBackgroundColor(Color.parseColor("#000000"));
 
-            } else if (f < 14.6) {
-                tv.setText("" + f);
+            } else if (userResult < 14.6) {
+                tv.setText("" + userResult);
                 tv.setBackgroundColor(Color.parseColor("#48acda"));
-            } else if (f >= 14.6 && f < 21.3) {
-                tv.setText("" + f);
+            } else if (userResult >= 14.6 && userResult < 21.3) {
+                tv.setText("" + userResult);
                 tv.setBackgroundColor(Color.parseColor("#42cd3a"));
-            } else if (f >= 21.3 && f < 25.0) {
-                tv.setText("" + f);
+            } else if (userResult >= 21.3 && userResult < 25.0) {
+                tv.setText("" + userResult);
                 tv.setBackgroundColor(Color.parseColor("#F30BDE"));
-            } else if (f >= 25.0) {
-                tv.setText("" + f);
+            } else if (userResult >= 25.0) {
+                tv.setText("" + userResult);
                 tv.setBackgroundColor(Color.parseColor("#ff9900"));
             }
-        } else if (a >= 10 && a < 15) {
+        } else if (metrics >= 10 && metrics < 15) {
             under.setText("< 16.7");
             normal.setText("16.7 - 22.5");
             over.setText("22.5 - 25.6");
             obese.setText("> 25.6");
             morobese.setText("-");
-            if (f == 0) {
+            if (userResult == 0) {
                 tv.setText("--");
                 tv.setBackgroundColor(Color.parseColor("#000000"));
 
-            } else if (f < 16.7) {
-                tv.setText("" + f);
+            } else if (userResult < 16.7) {
+                tv.setText("" + userResult);
                 tv.setBackgroundColor(Color.parseColor("#48acda"));
-            } else if (f >= 16.7 && f < 22.5) {
-                tv.setText("" + f);
+            } else if (userResult >= 16.7 && userResult < 22.5) {
+                tv.setText("" + userResult);
                 tv.setBackgroundColor(Color.parseColor("#42cd3a"));
-            } else if (f >= 22.5 && f < 25.6) {
-                tv.setText("" + f);
+            } else if (userResult >= 22.5 && userResult < 25.6) {
+                tv.setText("" + userResult);
                 tv.setBackgroundColor(Color.parseColor("#F30BDE"));
-            } else if (f >= 25.6) {
-                tv.setText("" + f);
+            } else if (userResult >= 25.6) {
+                tv.setText("" + userResult);
                 tv.setBackgroundColor(Color.parseColor("#ff9900"));
             }
-        } else if (a >= 15 && a < 20) {
+        } else if (metrics >= 15 && metrics < 20) {
             under.setText("< 18.6");
             normal.setText("18.6 - 23.9");
             over.setText("23.9 -26.7");
             obese.setText("> 26.7");
             morobese.setText("-");
-            if (f == 0) {
+            if (userResult == 0) {
                 tv.setText("--");
                 tv.setBackgroundColor(Color.parseColor("#000000"));
 
-            } else if (f < 18.6) {
-                tv.setText("" + f);
+            } else if (userResult < 18.6) {
+                tv.setText("" + userResult);
                 tv.setBackgroundColor(Color.parseColor("#48acda"));
-            } else if (f >= 18.6 && f < 23.9) {
-                tv.setText("" + f);
+            } else if (userResult >= 18.6 && userResult < 23.9) {
+                tv.setText("" + userResult);
                 tv.setBackgroundColor(Color.parseColor("#42cd3a"));
-            } else if (f >= 23.9 && f < 26.7) {
-                tv.setText("" + f);
+            } else if (userResult >= 23.9 && userResult < 26.7) {
+                tv.setText("" + userResult);
                 tv.setBackgroundColor(Color.parseColor("#F30BDE"));
-            } else if (f >= 26.7) {
-                tv.setText("" + f);
+            } else if (userResult >= 26.7) {
+                tv.setText("" + userResult);
                 tv.setBackgroundColor(Color.parseColor("#ff9900"));
             }
-        } else if (a >= 20) {
+        } else if (metrics >= 20) {
             under.setText("< 20");
             normal.setText("20 - 25");
             over.setText("25 - 30");
             obese.setText("30 - 40");
             morobese.setText("> 40");
-            if (f == 0) {
+            if (userResult == 0) {
                 tv.setText("--");
                 tv.setBackgroundColor(Color.parseColor("#000000"));
 
-            } else if (f < 20) {
-                tv.setText("" + f);
+            } else if (userResult < 20) {
+                tv.setText("" + userResult);
                 tv.setBackgroundColor(Color.parseColor("#48acda"));
-            } else if (f >= 20 && f < 25) {
-                tv.setText("" + f);
+            } else if (userResult >= 20 && userResult < 25) {
+                tv.setText("" + userResult);
                 tv.setBackgroundColor(Color.parseColor("#42cd3a"));
-            } else if (f >= 25 && f < 30) {
-                tv.setText("" + f);
+            } else if (userResult >= 25 && userResult < 30) {
+                tv.setText("" + userResult);
                 tv.setBackgroundColor(Color.parseColor("#F30BDE"));
-            } else if (f >= 30 && f < 40) {
-                tv.setText("" + f);
+            } else if (userResult >= 30 && userResult < 40) {
+                tv.setText("" + userResult);
                 tv.setBackgroundColor(Color.parseColor("#ff9900"));
             } else {
-                tv.setText("" + f);
+                tv.setText("" + userResult);
                 tv.setBackgroundColor(Color.parseColor("#ff0400"));
             }
         }
@@ -274,7 +260,7 @@ public class BMIActivity extends AppCompatActivity {
         TextView over = findViewById(R.id.overweightView);
         TextView obese = findViewById(R.id.obeseView);
         TextView morobese = findViewById(R.id.morobese);
-        TextView tv = findViewById(R.id.resultView);
+        TextView resultView = findViewById(R.id.resultView);
         if (a < 10) {
             under.setText("< 14.2");
             normal.setText("14.2 - 20.6");
@@ -282,21 +268,21 @@ public class BMIActivity extends AppCompatActivity {
             obese.setText("> 23.3");
             morobese.setText("-");
             if (f == 0) {
-                tv.setText("--");
-                tv.setBackgroundColor(Color.parseColor("#000000"));
+                resultView.setText("--");
+                resultView.setBackgroundColor(Color.parseColor("#000000"));
 
             } else if (f < 14.2) {
-                tv.setText("" + f);
-                tv.setBackgroundColor(Color.parseColor("#48acda"));
+                resultView.setText("" + f);
+                resultView.setBackgroundColor(Color.parseColor("#48acda"));
             } else if (f >= 14.2 && f < 20.6) {
-                tv.setText("" + f);
-                tv.setBackgroundColor(Color.parseColor("#42cd3a"));
+                resultView.setText("" + f);
+                resultView.setBackgroundColor(Color.parseColor("#42cd3a"));
             } else if (f >= 20.6 && f < 23.3) {
-                tv.setText("" + f);
-                tv.setBackgroundColor(Color.parseColor("#F30BDE"));
+                resultView.setText("" + f);
+                resultView.setBackgroundColor(Color.parseColor("#F30BDE"));
             } else if (f >= 23.3) {
-                tv.setText("" + f);
-                tv.setBackgroundColor(Color.parseColor("#ff9900"));
+                resultView.setText("" + f);
+                resultView.setBackgroundColor(Color.parseColor("#ff9900"));
             }
         } else if (a >= 10 && a < 15) {
             under.setText("< 15");
@@ -305,21 +291,21 @@ public class BMIActivity extends AppCompatActivity {
             obese.setText("> 23.3");
             morobese.setText("-");
             if (f == 0) {
-                tv.setText("--");
-                tv.setBackgroundColor(Color.parseColor("#000000"));
+                resultView.setText("--");
+                resultView.setBackgroundColor(Color.parseColor("#000000"));
 
             } else if (f < 15) {
-                tv.setText("" + f);
-                tv.setBackgroundColor(Color.parseColor("#48acda"));
+                resultView.setText("" + f);
+                resultView.setBackgroundColor(Color.parseColor("#48acda"));
             } else if (f >= 15 && f < 21.4) {
-                tv.setText("" + f);
-                tv.setBackgroundColor(Color.parseColor("#42cd3a"));
+                resultView.setText("" + f);
+                resultView.setBackgroundColor(Color.parseColor("#42cd3a"));
             } else if (f >= 21.4 && f < 23.3) {
-                tv.setText("" + f);
-                tv.setBackgroundColor(Color.parseColor("#F30BDE"));
+                resultView.setText("" + f);
+                resultView.setBackgroundColor(Color.parseColor("#F30BDE"));
             } else if (f >= 23.3) {
-                tv.setText("" + f);
-                tv.setBackgroundColor(Color.parseColor("#ff9900"));
+                resultView.setText("" + f);
+                resultView.setBackgroundColor(Color.parseColor("#ff9900"));
             }
         } else if (a >= 15 && a < 20) {
             under.setText("< 17.8");
@@ -328,21 +314,21 @@ public class BMIActivity extends AppCompatActivity {
             obese.setText("> 25.6");
             morobese.setText("-");
             if (f == 0) {
-                tv.setText("--");
-                tv.setBackgroundColor(Color.parseColor("#000000"));
+                resultView.setText("--");
+                resultView.setBackgroundColor(Color.parseColor("#000000"));
 
             } else if (f < 17.8) {
-                tv.setText("" + f);
-                tv.setBackgroundColor(Color.parseColor("#48acda"));
+                resultView.setText("" + f);
+                resultView.setBackgroundColor(Color.parseColor("#48acda"));
             } else if (f >= 17.8 && f < 23.3) {
-                tv.setText("" + f);
-                tv.setBackgroundColor(Color.parseColor("#42cd3a"));
+                resultView.setText("" + f);
+                resultView.setBackgroundColor(Color.parseColor("#42cd3a"));
             } else if (f >= 23.3 && f < 25.6) {
-                tv.setText("" + f);
-                tv.setBackgroundColor(Color.parseColor("#F30BDE"));
+                resultView.setText("" + f);
+                resultView.setBackgroundColor(Color.parseColor("#F30BDE"));
             } else if (f >= 25.6) {
-                tv.setText("" + f);
-                tv.setBackgroundColor(Color.parseColor("#ff9900"));
+                resultView.setText("" + f);
+                resultView.setBackgroundColor(Color.parseColor("#ff9900"));
             }
         } else if (a >= 20) {
             under.setText("< 19");
@@ -351,30 +337,30 @@ public class BMIActivity extends AppCompatActivity {
             obese.setText("30 - 40");
             morobese.setText("> 40");
             if (f == 0) {
-                tv.setText("--");
-                tv.setBackgroundColor(Color.parseColor("#000000"));
+                resultView.setText("--");
+                resultView.setBackgroundColor(Color.parseColor("#000000"));
 
             } else if (f < 19) {
-                tv.setText("" + f);
-                tv.setBackgroundColor(Color.parseColor("#48acda"));
+                resultView.setText("" + f);
+                resultView.setBackgroundColor(Color.parseColor("#48acda"));
             } else if (f >= 19 && f < 24) {
-                tv.setText("" + f);
-                tv.setBackgroundColor(Color.parseColor("#42cd3a"));
+                resultView.setText("" + f);
+                resultView.setBackgroundColor(Color.parseColor("#42cd3a"));
             } else if (f >= 24 && f < 30) {
-                tv.setText("" + f);
-                tv.setBackgroundColor(Color.parseColor("#F30BDE"));
+                resultView.setText("" + f);
+                resultView.setBackgroundColor(Color.parseColor("#F30BDE"));
             } else if (f >= 30 && f < 40) {
-                tv.setText("" + f);
-                tv.setBackgroundColor(Color.parseColor("#ff9900"));
+                resultView.setText("" + f);
+                resultView.setBackgroundColor(Color.parseColor("#ff9900"));
             } else {
-                tv.setText("" + f);
-                tv.setBackgroundColor(Color.parseColor("#ff0400"));
+                resultView.setText("" + f);
+                resultView.setBackgroundColor(Color.parseColor("#ff0400"));
             }
         }
     }
 
-    public void result(View view) {
-        Button button = findViewById(R.id.res);
+    public void userResult(View view) {
+        Button button = findViewById(R.id.BMIResult);
         TempAge3 = GetAge();
         temp_height3 = Getheight();
         temp_weight3 = GetWeight();
@@ -395,10 +381,10 @@ public class BMIActivity extends AppCompatActivity {
         }
     }
 
-    public void reset(View view) {
+    public void resetResult(View view) {
         Animation animation = new AlphaAnimation(1.0f, 0.0f);
         animation.setDuration(600);
-        Button button = findViewById(R.id.reset);
+        Button button = findViewById(R.id.BMIReset);
         button.startAnimation(animation);
         if (var4 != 0) {
             TextView under = findViewById(R.id.underweightView);
@@ -426,7 +412,7 @@ public class BMIActivity extends AppCompatActivity {
             TextView t = findViewById(R.id.resultView);
             t.setText("0.0");
             t.setBackgroundColor(Color.parseColor("#FFCDCDC6"));
-            rg.clearCheck();
+            group.clearCheck();
             under.setText("-");
             normal.setText("-");
             over.setText("-");
