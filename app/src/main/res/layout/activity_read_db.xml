@@ -6,28 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".ReadDBActivity"
     android:orientation="vertical">
+
     <RelativeLayout
         android:layout_width="match_parent"
 
-        android:layout_height="405dp">
+        android:layout_height="331dp">
+
         <LinearLayout
-            android:background="@drawable/instagradient"
             android:layout_width="match_parent"
             android:layout_height="350dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="-20dp"
+            android:layout_marginEnd="-3dp"
+            android:background="@drawable/instagradient"
             android:orientation="vertical">
+
             <ImageView
-                android:layout_marginTop="45dp"
-                android:layout_gravity="center_horizontal"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:src="@drawable/avatar"/>
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="45dp"
+                android:src="@drawable/avatar" />
 
             <TextView
+                android:id="@+id/NameView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
-                android:id="@+id/NameView"
                 android:text="Flexit User"
 
                 android:textColor="#fff"
@@ -57,51 +64,56 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:layout_width="360dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_width="376dp"
+        android:layout_height="332dp"
         android:layout_gravity="center"
-        android:layout_marginTop="45dp">
+        android:layout_marginTop="45dp"
+        android:orientation="vertical">
+
         <LinearLayout
-            android:orientation="horizontal"
-            android:paddingLeft="25dp"
-            android:background="@drawable/bgbtnred"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@drawable/bgbtnred"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp">
+
             <ImageView
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:src="@drawable/height"/>
-            <TextView
-                android:textStyle="bold"
-                android:layout_gravity="center_vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="20dp"
-                android:text="Height:"
-                android:textColor="@color/white"/>
+                android:src="@drawable/height" />
 
             <TextView
-                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:text="Height:"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
                 android:id="@+id/heightview"
-                android:background="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textSize="17sp"
+                android:layout_marginLeft="5dp"
+                android:background="@color/white"
                 android:gravity="center"
-                android:text="" />
+                android:text=""
+                android:textSize="17sp" />
         </LinearLayout>
+
         <LinearLayout
-            android:layout_marginTop="25dp"
-            android:orientation="horizontal"
-            android:paddingLeft="25dp"
-            android:background="@drawable/bgbtnred"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/bgbtnred"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp">
+
             <ImageView
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:src="@drawable/weight"/>
+                android:src="@drawable/weight" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -114,46 +126,48 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:layout_marginLeft="5dp"
                 android:id="@+id/weighttview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
                 android:background="@color/white"
-                android:textSize="17sp"
                 android:gravity="center"
-                android:text="" />
+                android:text=""
+                android:textSize="17sp" />
         </LinearLayout>
+
         <LinearLayout
-            android:layout_marginTop="25dp"
-            android:orientation="horizontal"
-            android:paddingLeft="25dp"
-            android:background="@drawable/bgbtnred"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/bgbtnred"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp">
+
             <ImageView
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:src="@drawable/hourglass"/>
+                android:src="@drawable/hourglass" />
 
             <TextView
                 android:layout_width="wrap_content"
 
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:paddingLeft="20dp"
+                android:paddingLeft="39dp"
                 android:text="Age:"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 
             <TextView
-                android:layout_marginLeft="5dp"
                 android:id="@+id/AgeView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textSize="17sp"
+                android:layout_marginLeft="5dp"
                 android:background="@color/white"
                 android:gravity="center"
-                android:text="" />
+                android:text=""
+                android:textSize="17sp" />
         </LinearLayout>
     </LinearLayout>
 

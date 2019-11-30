@@ -61,7 +61,7 @@ public class WelcomeActivity extends AppCompatActivity {
                 UserBio user = new UserBio(userID,Bio);
 
                 if (TextUtils.isEmpty(Bio)){
-                    Toast.makeText(WelcomeActivity.this, "Invalid Age", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(WelcomeActivity.this, "Invalid, enter a valid BIO", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
