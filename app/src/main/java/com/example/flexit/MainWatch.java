@@ -35,15 +35,13 @@ public class MainWatch extends AppCompatActivity {
 
         round = AnimationUtils.loadAnimation(this, R.anim.round_animate);
         stoparrow = AnimationUtils.loadAnimation(this, R.anim.stop_animate);
-        Typeface MMedium = Typeface.createFromAsset(getAssets(),"fonts/MMedium.ttf");
-        //customize  font
-        Start.setTypeface(MMedium);
-        Stop.setTypeface(MMedium);
+        Typeface CalibriFont = Typeface.createFromAsset(getAssets(), "fonts/CalibriFont.ttf");
+        Start.setTypeface(CalibriFont);
+        Stop.setTypeface(CalibriFont);
 
         Start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //passing Animation
                 arrow.startAnimation(round);
 
                 timer.setBase(SystemClock.elapsedRealtime());
