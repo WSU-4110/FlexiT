@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.andrognito.flashbar.Flashbar;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class FeedActivity extends AppCompatActivity {
 
@@ -22,7 +23,7 @@ public class FeedActivity extends AppCompatActivity {
     private  Button clock;
     private Button BMI;
     private Button music;
-    private ImageView profile;
+    private ImageView profile, logout;
     private Flashbar flashbar = null;
 
 
@@ -38,7 +39,7 @@ public class FeedActivity extends AppCompatActivity {
         BMI = (Button) findViewById(R.id.button_BMI);
         music =(Button)findViewById(R.id.button_music);
         profile =(ImageView) findViewById(R.id.button_viewprofile);
-
+        logout =(ImageView)findViewById(R.id.logout_view);
 
         flashbar = displayQuote();
         flashbar.show();
@@ -96,6 +97,19 @@ public class FeedActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), ReadDBActivity.class));
             }
         });
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(FeedActivity.this,MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                finish();
+
+            }
+        });
+
 
     }
 
