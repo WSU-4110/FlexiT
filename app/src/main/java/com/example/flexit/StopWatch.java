@@ -48,9 +48,7 @@ public class StopWatch extends AppCompatActivity implements View.OnClickListener
     }
 
 
-    /**
-     * method to initialize the views
-     */
+
     private void initViews() {
         CircleStopWatch = (ProgressBar) findViewById(R.id.progressStopWatch);
         enterMinute = (EditText) findViewById(R.id.entertextMinute);
@@ -59,9 +57,7 @@ public class StopWatch extends AppCompatActivity implements View.OnClickListener
         StoptimeView = (ImageView) findViewById(R.id.StartView);
     }
 
-    /**
-     * method to initialize the click listeners
-     */
+
     private void initListeners() {
         ResettimeView.setOnClickListener(this);
         StoptimeView.setOnClickListener(this);
@@ -79,9 +75,7 @@ public class StopWatch extends AppCompatActivity implements View.OnClickListener
         }
     }
 
-    /**
-     * method to resetResult count down timer
-     */
+
     private void reset() {
         stopCountDownTimer();
         startCountDownTimer();
@@ -92,15 +86,10 @@ public class StopWatch extends AppCompatActivity implements View.OnClickListener
     private void startStop() {
         if (timerStatus == TimerStatus.STOPPED) {
 
-            // call to initialize the timer values
             setTimer();
-            // call to initialize the progress bar values
             setWatch();
-            // showing the resetResult icon
             ResettimeView.setVisibility(View.VISIBLE);
-            // changing play icon to stop icon
             StoptimeView.setImageResource(R.drawable.icon_stop);
-            // making edit text not editable
             enterMinute.setEnabled(false);
             // changing the timer status to started
             timerStatus = TimerStatus.STARTED;
@@ -109,13 +98,9 @@ public class StopWatch extends AppCompatActivity implements View.OnClickListener
 
         } else {
 
-            // hiding the resetResult icon
             ResettimeView.setVisibility(View.GONE);
-            // changing stop icon to start icon
-            StoptimeView.setImageResource(R.drawable.icon_start);
-            // making edit text editable
+            StoptimeView.setImageResource(R.drawable.stopwatch_start);
             enterMinute.setEnabled(true);
-            // changing the timer status to stopped
             timerStatus = TimerStatus.STOPPED;
             stopCountDownTimer();
 
@@ -159,7 +144,7 @@ public class StopWatch extends AppCompatActivity implements View.OnClickListener
                 // hiding the resetResult icon
                 ResettimeView.setVisibility(View.GONE);
                 // changing stop icon to start icon
-                StoptimeView.setImageResource(R.drawable.icon_start);
+                StoptimeView.setImageResource(R.drawable.stopwatch_start);
                 // making edit text editable
                 enterMinute.setEnabled(true);
                 // changing the timer status to stopped
@@ -170,16 +155,11 @@ public class StopWatch extends AppCompatActivity implements View.OnClickListener
         countDownTimer.start();
     }
 
-    /**
-     * method to stop count down timer
-     */
+
     private void stopCountDownTimer() {
         countDownTimer.cancel();
     }
 
-    /**
-     * method to set circular progress bar values
-     */
     private void setWatch() {
 
         CircleStopWatch.setMax((int) timeCountInMilliSeconds / 1000);

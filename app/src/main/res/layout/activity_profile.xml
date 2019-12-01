@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:hint="First Name"
-            android:background="@drawable/bgbtngreen"
+            android:background="@drawable/greenbutton"
             android:padding="10dp" />
 
         <EditText
@@ -40,7 +40,7 @@
             android:layout_margin="5dp"
             android:hint="Last Name"
             android:padding="10dp"
-            android:background="@drawable/bgbtngreen"/>
+            android:background="@drawable/greenbutton"/>
 
         <EditText
             android:id="@+id/text_age"
@@ -49,7 +49,7 @@
             android:layout_margin="5dp"
             android:hint="Age"
             android:padding="10dp"
-            android:background="@drawable/bgbtngreen"/>
+            android:background="@drawable/greenbutton"/>
 
         <EditText
             android:id="@+id/text_height"
@@ -58,7 +58,7 @@
             android:layout_margin="5dp"
             android:hint="Height (in)"
             android:padding="10dp"
-            android:background="@drawable/bgbtngreen"/>
+            android:background="@drawable/greenbutton"/>
 
         <EditText
             android:id="@+id/text_weight"
@@ -67,7 +67,7 @@
             android:layout_margin="5dp"
             android:hint="Weight"
             android:padding="10dp"
-            android:background="@drawable/bgbtngreen"/>
+            android:background="@drawable/greenbutton"/>
 
         <EditText
             android:id="@+id/text_description"
@@ -76,7 +76,7 @@
             android:layout_margin="5dp"
             android:hint="Enter your fitness goal"
             android:padding="10dp"
-            android:background="@drawable/bgbtngreen"/>
+            android:background="@drawable/greenbutton"/>
 
     </LinearLayout>
 
@@ -85,7 +85,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@drawable/bgbtnred"
+        android:background="@drawable/redbutton"
         android:drawableRight="@android:drawable/ic_menu_send"
         android:drawableTint="@color/black"
         android:text="Next" />

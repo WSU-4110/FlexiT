@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#211D44"
+    android:background="@drawable/gradient"
     android:layout_gravity="center"
     tools:context=".MainWatch">
 
@@ -46,51 +46,51 @@
         android:layout_below="@+id/bgcircle"
         android:layout_marginTop="10dp"
         android:gravity="center"
-        android:textColor="#FFF"
-        android:textSize="62sp"
+        android:textColor="@color/white"
+        android:textSize="65sp"
         app:layout_constraintHorizontal_bias="0.498" />
 
     <Button
         android:id="@+id/button_Start"
-        android:layout_width="280dp"
-        android:layout_height="55dp"
+        android:layout_width="295dp"
+        android:layout_height="60dp"
         android:layout_below="@+id/time"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:background="@drawable/bgbtngreen"
+        android:background="@drawable/greenbutton"
         android:text="Start Workout"
         android:textAllCaps="false"
-        android:textColor="#FFF"
-        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:textSize="25sp"
         app:layout_constraintHorizontal_bias="0.495" />
 
     <Button
         android:id="@+id/button_stop"
-        android:layout_width="276dp"
+        android:layout_width="295dp"
         android:layout_height="55dp"
         android:layout_below="@+id/button_Start"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:background="@drawable/bgbtnred"
+        android:background="@drawable/redbutton"
         android:text="Finish Workout"
         android:textAllCaps="false"
-        android:textColor="#FFF"
-        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:textSize="25sp"
         tools:layout_editor_absoluteX="570dp"
         tools:layout_editor_absoluteY="65dp" />
 
     <Button
         android:id="@+id/button_countdown"
         android:layout_width="276dp"
-        android:layout_height="55dp"
+        android:layout_height="60dp"
         android:layout_below="@+id/button_Start"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="94dp"
         android:background="@color/action"
         android:text="Countdown watch"
         android:textAllCaps="false"
-        android:textColor="#FFF"
-        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:textSize="25sp"
         tools:layout_editor_absoluteX="570dp"
         tools:layout_editor_absoluteY="65dp" />
 

@@ -50,7 +50,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="144dp"
         android:layout_marginTop="69dp"
-        android:background="@drawable/bgbtngreen"
+        android:background="@drawable/greenbutton"
         android:onClick="onClick"
         android:text="Gyms Near Me"
         android:textColor="@color/black" />
