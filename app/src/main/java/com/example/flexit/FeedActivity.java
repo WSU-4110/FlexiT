@@ -23,7 +23,7 @@ public class FeedActivity extends AppCompatActivity {
     private  Button clock;
     private Button BMI;
     private Button music;
-    private ImageView profile, logout;
+    private ImageView profile, logout, setting;
     private Flashbar flashbar = null;
 
 
@@ -40,6 +40,7 @@ public class FeedActivity extends AppCompatActivity {
         music =(Button)findViewById(R.id.button_music);
         profile =(ImageView) findViewById(R.id.button_viewprofile);
         logout =(ImageView)findViewById(R.id.logout_view);
+        setting = (ImageView)findViewById(R.id.setting_view);
 
         flashbar = displayQuote();
         flashbar.show();
@@ -97,6 +98,14 @@ public class FeedActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), ReadDBActivity.class));
             }
         });
+
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), SettingActivity.class));
+            }
+        });
+
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
