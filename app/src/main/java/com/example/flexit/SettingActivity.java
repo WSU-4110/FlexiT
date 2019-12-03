@@ -90,6 +90,8 @@ public class SettingActivity extends AppCompatActivity {
                 }
                 else {
                     UpdateInfo(userID,first,last,age,height,weight,description);
+                    Toast.makeText(getApplicationContext(),"Flexit Account Updated!",Toast.LENGTH_SHORT).show();
+
                 }
 
 
@@ -97,7 +99,6 @@ public class SettingActivity extends AppCompatActivity {
             }
         });
 
-        getSettingStatus();
 
         deleteFbUser.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,7 +114,7 @@ public class SettingActivity extends AppCompatActivity {
                                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                     startActivity(intent);
                                     finish();
-                                    Toast.makeText(getApplicationContext(),"User Account Deleted Successfully!",Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(),"Flexit Account Deleted!",Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });
@@ -125,18 +126,7 @@ public class SettingActivity extends AppCompatActivity {
 
 
 
-}
-
-    // Changing button text
-    private void getSettingStatus() {
-        if (TextUtils.isEmpty(userId)) {
-            save.setText("Save");
-        } else {
-            save.setText("Update");
-        }
     }
-
-
 
     private void getUserInfo(String uID, String fName, String lName, int age, int height, int weight, String description ) {
         // TODO
@@ -150,49 +140,23 @@ public class SettingActivity extends AppCompatActivity {
 
         myRef.child(userId).setValue(user);
 
-        userDataDriver();
     }
 
 
-    private void userDataDriver() {
-        myRef.child(userId).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                User user = dataSnapshot.getValue(User.class);
-
-                if (user == null) {
-                    Log.e(TAG, "No Data Found!");
-                    return;
-                }
-
-                Log.e(TAG, "Updated" + user.getUserID() + user.getfName() + user.getAge() + user.getHeight() + user.getWeight());
-
-
-                getSettingStatus();
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.e(TAG, "Failed to read user", error.toException());
-            }
-        });
-    }
     private void UpdateInfo(String uID, String fName, String lName, int age, int height, int weight, String description ) {
         // updating the user via child nodes
         if (!TextUtils.isEmpty(fName))
             myRef.child(userId).child("First Name").setValue(fName);
-            myRef.child(userId).child("Age").setValue(age);
-
+        myRef.child(userId).child("Age").setValue(age);
 
         if (!TextUtils.isEmpty(lName))
             myRef.child(userId).child("Last Name").setValue(lName);
-            myRef.child(userId).child("Height").setValue(height);
+        myRef.child(userId).child("Height").setValue(height);
 
 
         if (!TextUtils.isEmpty(description))
             myRef.child(userId).child("Description").setValue(description);
-            myRef.child(userId).child("Weight").setValue(weight);
+        myRef.child(userId).child("Weight").setValue(weight);
 
 
 
