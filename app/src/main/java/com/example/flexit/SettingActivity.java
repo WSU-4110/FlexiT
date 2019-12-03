@@ -90,6 +90,8 @@ public class SettingActivity extends AppCompatActivity {
                 }
                 else {
                     UpdateInfo(userID,first,last,age,height,weight,description);
+                    Toast.makeText(getApplicationContext(),"Flexit Account Updated!",Toast.LENGTH_SHORT).show();
+
                 }
 
 
@@ -124,7 +126,11 @@ public class SettingActivity extends AppCompatActivity {
 
 
 
+<<<<<<< HEAD
 }
+=======
+    }
+>>>>>>> 005848b12e027f68b244d25267fc253b305debe2
 
     private void getUserInfo(String uID, String fName, String lName, int age, int height, int weight, String description ) {
         // TODO
@@ -145,16 +151,20 @@ public class SettingActivity extends AppCompatActivity {
         // updating the user via child nodes
         if (!TextUtils.isEmpty(fName))
             myRef.child(userId).child("First Name").setValue(fName);
+<<<<<<< HEAD
             myRef.child(userId).child("Age").setValue(age);
+=======
+        myRef.child(userId).child("Age").setValue(age);
+>>>>>>> 005848b12e027f68b244d25267fc253b305debe2
 
         if (!TextUtils.isEmpty(lName))
             myRef.child(userId).child("Last Name").setValue(lName);
-            myRef.child(userId).child("Height").setValue(height);
+        myRef.child(userId).child("Height").setValue(height);
 
 
         if (!TextUtils.isEmpty(description))
             myRef.child(userId).child("Description").setValue(description);
-            myRef.child(userId).child("Weight").setValue(weight);
+        myRef.child(userId).child("Weight").setValue(weight);
 
 
 
