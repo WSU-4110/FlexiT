@@ -195,8 +195,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="6dp"
-                    android:text="<18.5"
-                    android:textColor="#1492CA"
+                    android:text="@string/hyphen"
+                    android:textColor="#48acda"
                     android:textSize="18sp" />
 
             </LinearLayout>
@@ -221,9 +221,9 @@
                     android:gravity="center"
                     android:layout_height="wrap_content"
                     android:id="@+id/normalView"
-                    android:textColor="#19AD11"
+                    android:textColor="#42cd3a"
                     android:padding="6dp"
-                    android:text="18.5 - 24.9" />
+                    android:text="@string/hyphen" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -245,9 +245,9 @@
                     android:textSize="18sp"
                     android:layout_height="wrap_content"
                     android:id="@+id/overweightView"
-                    android:textColor="#911382"
+                    android:textColor="#F30BDE"
                     android:padding="6dp"
-                    android:text="25 - 29.9" />
+                    android:text="@string/hyphen" />
             </LinearLayout>
 
             <LinearLayout
@@ -272,7 +272,7 @@
                     android:id="@+id/obeseView"
                     android:textColor="#ff9900"
                     android:padding="6dp"
-                    android:text=">30" />
+                    android:text="@string/hyphen" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -296,7 +296,7 @@
                     android:textColor="#eb0400"
                     android:padding="6dp"
                     android:textSize="18sp"
-                    android:text=">40" />
+                    android:text="@string/hyphen" />
             </LinearLayout>
             <TextView
                 android:layout_width="match_parent"

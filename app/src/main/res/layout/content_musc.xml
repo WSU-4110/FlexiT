@@ -14,9 +14,9 @@
         android:layout_alignTop="@+id/stop" />
     <TextView
         android:id="@+id/NameMusictext"
-        android:textColor="#7019c1"
-        android:textSize="20sp"
-        android:text="Song name"
+        android:textColor="#9C27B0"
+        android:textSize="18sp"
+        android:text="Song "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -26,13 +26,13 @@
 
     <TextView
         android:id="@+id/Songtext"
-        android:textColor="#259e06"
+        android:textColor="#429C47"
         android:textSize="18sp"
-        android:text="Singer"
+        android:text="Artist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginStart="15dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
         android:layout_alignBottom="@+id/MusicalLogo"
         android:layout_toRightOf="@+id/MusicalLogo"
         android:layout_toEndOf="@+id/MusicalLogo" />
@@ -42,15 +42,15 @@
         android:layout_marginTop="15dp"
         android:layout_toLeftOf="@id/stop"
         app:srcCompat="@drawable/playlogo"
-        android:layout_width="25dp"
-        android:layout_height="25dp" />
+        android:layout_width="23dp"
+        android:layout_height="23dp" />
 
     <ImageView
         android:id="@+id/stop"
         android:layout_marginTop="15dp"
         app:srcCompat="@drawable/stoplogo"
         android:layout_alignParentRight="true"
-        android:layout_width="25dp"
-        android:layout_height="25dp" />
+        android:layout_width="23dp"
+        android:layout_height="23dp" />
 
 </RelativeLayout>
