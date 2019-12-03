@@ -89,12 +89,9 @@ public class BMIActivity extends Activity {
         });
 
 
-        //Calculate BMI
     }
 
 
-
-    //Calculate BMI
 
     private int getUserBMI(final int userweight, final int userheight) {
         return (int) ((userweight * 703) / (userheight * userheight));
