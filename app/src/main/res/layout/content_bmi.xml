@@ -28,34 +28,6 @@
             android:paddingEnd="10dp"
             android:background="@drawable/border_shadow">
 
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:orientation="horizontal"
-                android:id="@+id/rg" >
-                <RadioButton
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/men"
-                    android:textColor="#4CAF50"
-                    android:paddingLeft="21dp"
-                    android:id="@+id/menButton"
-                    android:onClick="checkGender"
-                    tools:ignore="RtlHardcoded,RtlSymmetry" />
-                <RadioButton
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/women"
-                    android:textColor="#4CAF50"
-                    android:paddingLeft="21dp"
-                    android:id="@+id/womenButton"
-                    android:onClick="checkGender"
-                    tools:ignore="RtlHardcoded,RtlSymmetry" />
-            </RadioGroup>
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -70,29 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="12dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/age"
-                    android:padding="11dp"
-                    android:textSize="19sp"
-                    android:layout_weight="1"  />
-                <EditText
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:id="@+id/age"
-                    android:layout_weight="2" />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/yrs"
-                    android:textColor="#468f58"
-                    android:padding="11dp"
-                    android:textSize="19sp"
-                    android:layout_weight="1"  />
-            </LinearLayout>
+                android:orientation="horizontal"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -166,23 +116,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:orientation="horizontal">
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="48dp"
-                    android:text="@string/result"
-                    android:drawableLeft="@drawable/result"
-                    android:textSize="18sp"
-                    android:layout_weight="1"
-                    android:id="@+id/BMIResult"
-                    android:onClick="userResult"
-                    tools:ignore="RtlHardcoded" />
+
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="49dp"
-                    android:drawableLeft="@drawable/reset"
                     android:text="@string/reset"
                     android:textSize="18sp"
-                    android:onClick="resetResult"
                     android:layout_weight="1"
                     android:id="@+id/BMIReset"
                     tools:ignore="RtlHardcoded" />
@@ -198,7 +137,7 @@
 
             <TextView
                 android:id="@+id/resultView"
-                android:layout_width="381dp"
+                android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="4dp"
                 android:layout_marginRight="4dp"
