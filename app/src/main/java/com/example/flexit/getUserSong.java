@@ -1,8 +1,6 @@
 package com.example.flexit;
 
-/**
- * Created by quocnguyen on 14/07/2017.
- */
+
 public class getUserSong {
     private String name;
     private int CurrentSong;

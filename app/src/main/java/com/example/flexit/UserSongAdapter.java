@@ -11,9 +11,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-/**
- * Created by quocnguyen on 14/07/2017.
- */
+
 public class UserSongAdapter extends BaseAdapter {
 
     private Context MusicContent;
