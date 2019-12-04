@@ -27,10 +27,12 @@ public class MusicActivity extends AppCompatActivity {
         insertGetUserSong.add(new getUserSong("Feelin you ", "Abe ", R.raw.feelingyou));
         insertGetUserSong.add(new getUserSong("Farewell ", "J cole ", R.raw.farewell));
         insertGetUserSong.add(new getUserSong("None Shall Pass ", "Aesop Rock ", R.raw.aesopr));
-        insertGetUserSong.add(new getUserSong("Lost You (feat. Twin Shadow & D'Angelo Lacy) ", "Zeds dead ", R.raw.zedsdead));
+        insertGetUserSong.add(new getUserSong("Lost You  ", "Zeds dead ", R.raw.zedsdead));
         insertGetUserSong.add(new getUserSong("Rivers of Babylon ", "Bony M ", R.raw.babylon));
+        insertGetUserSong.add(new getUserSong("Cotton Eye Joe ", "Rednex", R.raw.conttoneye));
 
-        
+
+
 
 
 
