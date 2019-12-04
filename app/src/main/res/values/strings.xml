@@ -50,6 +50,7 @@
     <string name="morbidly_obese">Morbidly Obese</string>
     <string name="from">From</string>
     <string name="clear">Clear</string>
+    <string name="normalbmi"> less than 18.5</string>
     <string name="to">To</string>
     <string name="title_activity_read_db">ReadDBActivity</string>
 </resources>

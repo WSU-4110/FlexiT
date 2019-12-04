@@ -20,12 +20,19 @@ public class MusicActivity extends AppCompatActivity {
 
         songList = (ListView) findViewById(R.id.songList);
         insertGetUserSong = new ArrayList<>();
-        insertGetUserSong.add(new getUserSong("baby shark", "unknown", R.raw.babyshark));
-        insertGetUserSong.add(new getUserSong("GOMD", "Jcole", R.raw.jcole));
-        insertGetUserSong.add(new getUserSong("Someone you loved ", "Lewis Capaldi ", R.raw.syl));
-        insertGetUserSong.add(new getUserSong("Kal Ho Naa Ho", "Sonu Nigam ", R.raw.srk));
-        insertGetUserSong.add(new getUserSong("Sexy and I know it ", "LMFAO ", R.raw.lmfao));
-        insertGetUserSong.add(new getUserSong("Campfire Song ", "SpongeBob Square Pants ", R.raw.campfire));
+        insertGetUserSong.add(new getUserSong("A Change Is Gonna Come", "reta van fleet", R.raw.gretavan));
+        insertGetUserSong.add(new getUserSong("Over The Hills And Far Away", "Night Wish", R.raw.nightwish));
+        insertGetUserSong.add(new getUserSong("Ayushmann Khurrana ", "Tequila ", R.raw.teq));
+        insertGetUserSong.add(new getUserSong("Lost", "France Ocean", R.raw.lost));
+        insertGetUserSong.add(new getUserSong("Feelin you ", "Abe ", R.raw.feelingyou));
+        insertGetUserSong.add(new getUserSong("Farewell ", "J cole ", R.raw.farewell));
+        insertGetUserSong.add(new getUserSong("None Shall Pass ", "Aesop Rock ", R.raw.aesopr));
+        insertGetUserSong.add(new getUserSong("Lost You (feat. Twin Shadow & D'Angelo Lacy) ", "Zeds dead ", R.raw.zedsdead));
+        insertGetUserSong.add(new getUserSong("Rivers of Babylon ", "Bony M ", R.raw.babylon));
+
+        
+
+
 
         adapter = new UserSongAdapter(this, R.layout.content_musc, insertGetUserSong);
         songList.setAdapter(adapter);
