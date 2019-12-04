@@ -144,7 +144,7 @@ public class FeedActivity extends AppCompatActivity {
         return new Flashbar.Builder(this)
                 .gravity(Flashbar.Gravity.BOTTOM)
                 .title("Quote of the Day!")
-                .message(quote + "\n" + "-" + author)
+                .message("quote" + "\n" + "-" + "author")
                 .backgroundDrawable(R.drawable.bg_gradient)
                 .enableSwipeToDismiss()
                 .build();

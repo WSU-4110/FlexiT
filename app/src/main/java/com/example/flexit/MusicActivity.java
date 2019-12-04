@@ -30,6 +30,9 @@ public class MusicActivity extends AppCompatActivity {
         insertGetUserSong.add(new getUserSong("Lost You  ", "Zeds dead ", R.raw.zedsdead));
         insertGetUserSong.add(new getUserSong("Rivers of Babylon ", "Bony M ", R.raw.babylon));
         insertGetUserSong.add(new getUserSong("Cotton Eye Joe ", "Rednex", R.raw.conttoneye));
+        insertGetUserSong.add(new getUserSong("Cotton Eye Joe ", "Rednex", R.raw.conttoneye));
+        insertGetUserSong.add(new getUserSong("Believer ", "Imagine Dragon", R.raw.believer));
+
 
 
 
