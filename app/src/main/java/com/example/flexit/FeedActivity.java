@@ -145,6 +145,7 @@ public class FeedActivity extends AppCompatActivity {
                 .gravity(Flashbar.Gravity.BOTTOM)
                 .title("Quote of the Day!")
                 .message("The only bad workout is the one that didn't happen" + "\n" + "-" + "anonymous")
+                .message("quote" + "\n" + "-" + "author")
                 .backgroundDrawable(R.drawable.bg_gradient)
                 .enableSwipeToDismiss()
                 .build();
