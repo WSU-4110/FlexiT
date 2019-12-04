@@ -64,7 +64,7 @@ public class FeedActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 /*finish();*/
-                startActivity(new Intent(getApplicationContext(), ScheduleActivity.class));
+                startActivity(new Intent(getApplicationContext(), ScheduleHome.class));
             }
         });
 

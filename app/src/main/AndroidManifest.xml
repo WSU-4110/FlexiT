@@ -36,6 +36,8 @@
         <activity android:name=".MusicActivity" />
         <activity android:name=".ForgotPassActivity" />
         <activity android:name=".BMIActivity" />
+        <activity android:name=".ScheduleHome" />
+        <activity android:name=".MonthlySchedule" />
         <activity android:name=".StopWatch" />
         <activity android:name=".WorkoutFeed" />
         <activity android:name=".ReadDBActivity" />

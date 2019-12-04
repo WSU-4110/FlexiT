@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/AppText"
     android:layout_width="match_parent"
-    android:background="@color/yellow"
     android:layout_height="match_parent"
+    android:background="#26A69A"
     tools:context=".ScheduleActivity">
 
     <EditText
@@ -88,12 +88,14 @@
 
     <EditText
         android:id="@+id/Title"
-        android:layout_width="412dp"
-        android:layout_height="62dp"
+        android:layout_width="424dp"
+        android:layout_height="101dp"
+        android:editable="false"
         android:ems="10"
         android:inputType="none"
-        android:text="                            My Fitness Schedule"
-        android:editable="false"
+        android:textStyle="bold"
+        android:text="            My Weekly Schedule"
+        android:textSize="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -120,7 +122,7 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/Monday"
+        app:layout_constraintStart_toEndOf="@id/Sunday"
         app:layout_constraintTop_toBottomOf="@+id/SundayBox" />
 
     <EditText
@@ -169,11 +171,12 @@
         android:layout_width="311dp"
         android:layout_height="75dp"
         android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
         android:ems="10"
         android:hint="My Wednesday Schedule is..."
         android:inputType="textPersonName"
-        app:layout_constraintStart_toEndOf="@id/Wednesday"
-        app:layout_constraintTop_toBottomOf="@id/TuesdayBox" />
+        app:layout_constraintStart_toEndOf="@+id/Wednesday"
+        app:layout_constraintTop_toBottomOf="@+id/TuesdayBox" />
 
     <EditText
         android:id="@+id/SaturdayBox"
@@ -192,10 +195,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Save"
-        android:background="@drawable/greenbutton"
-        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
