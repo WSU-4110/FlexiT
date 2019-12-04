@@ -4,19 +4,23 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.andrognito.flashbar.Flashbar;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.io.DataInputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+
 public class FeedActivity extends AppCompatActivity {
 
-    private Button map;
+    private Button help;
     private Button workout;
     private Button schedule;
     private Button upload;
@@ -27,12 +31,14 @@ public class FeedActivity extends AppCompatActivity {
     private Flashbar flashbar = null;
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed);
 
-        map = (Button) findViewById(R.id.button_map);
+        help = (Button) findViewById(R.id.button_help);
         workout = (Button) findViewById(R.id.button_workout);
         schedule = (Button) findViewById(R.id.button_schedule);
         clock = (Button) findViewById(R.id.button_clock);
@@ -45,11 +51,12 @@ public class FeedActivity extends AppCompatActivity {
         flashbar = displayQuote();
         flashbar.show();
 
-        map.setOnClickListener(new View.OnClickListener() {
+
+        help.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 /*finish();*/
-                startActivity(new Intent(getApplicationContext(), MapsActivity.class));
+                startActivity(new Intent(getApplicationContext(), HelpActivity.class));
             }
         });
         // scheduler below
@@ -122,6 +129,7 @@ public class FeedActivity extends AppCompatActivity {
 
     }
 
+
     @Override
     public void onBackPressed() {
         if(true){
@@ -136,7 +144,7 @@ public class FeedActivity extends AppCompatActivity {
         return new Flashbar.Builder(this)
                 .gravity(Flashbar.Gravity.BOTTOM)
                 .title("Quote of the Day!")
-                .message("This is very deep. \n -MLK")
+                .message(quote + "\n" + "-" + author)
                 .backgroundDrawable(R.drawable.bg_gradient)
                 .enableSwipeToDismiss()
                 .build();
