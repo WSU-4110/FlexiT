@@ -97,18 +97,18 @@ public class BMIActivity extends Activity {
         return (int) ((userweight * 703) / (userheight * userheight));
     }
 
-    // Interpret what BMI means
-    private String showUserBMI(float bmiValue) {
+    // bmi
+    private String showUserBMI(float userBMI) {
 
-        if (bmiValue < 18.5) {
+        if (userBMI < 18.5) {
             return "underweight";
-        } else if (bmiValue < 25) {
+        } else if (userBMI < 25) {
 
             return "normal";
-        } else if (bmiValue < 30) {
+        } else if (userBMI < 30) {
 
             return "overweight";
-        } else if (bmiValue < 40) {
+        } else if (userBMI < 40) {
 
             return "Obese";
         } else {
