@@ -1,0 +1,38 @@
+package com.example.flexit;
+
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+public class ForgotPassActivityTest {
+
+    @Test
+    public void True() {
+        String password = "";
+        String zero = "";
+
+        assertNotEquals(password, zero);
+    }
+
+    @Test
+    public void SendNewPass() throws Exception {
+        String password = "Password send to your email";
+        return assertNotEquals(true);
+    }
+
+    @Test
+    public void setUp() {
+        String password = "";
+        String zero = "";
+
+        assertNotEquals(password, zero);
+    }
+
+
+    @Test
+    public void SendError() throws Exception{
+        String password = "Invalid Input";
+        assertEquals(Exception);
+    }
+
+}
