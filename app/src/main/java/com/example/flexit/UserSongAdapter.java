@@ -2,15 +2,13 @@ package com.example.flexit;
 
 import android.content.Context;
 import android.media.MediaPlayer;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.TextView;
-
 import java.util.ArrayList;
-
+import android.view.LayoutInflater;
+import android.widget.TextView;
 
 public class UserSongAdapter extends BaseAdapter {
 
@@ -26,7 +24,7 @@ public class UserSongAdapter extends BaseAdapter {
         this.getUserSongArrList = getUserSongArrList;
     }
 
-    @Override
+    @Override// tehse are built in from array list , baseadapter is a built in adapter in android studio, everything is already pre initialized
     public int getCount() {
         return getUserSongArrList.size();
     }
@@ -70,19 +68,19 @@ public class UserSongAdapter extends BaseAdapter {
         getView.nameView.setText(currentSong.getName());
         getView.songView.setText(currentSong.getArtist());
 
-        // play music
+        // play the music for the user
         getView.playView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(validate){
-                    MP = MediaPlayer.create(MusicContent, currentSong.getCurrentSong());
+                    MP = MediaPlayer.create(MusicContent, currentSong.getCurrentSong());// setting the music player up
                     validate = false;
                 }
                 if(MP.isPlaying()) {
-                    MP.pause();
+                    MP.pause();// pauseing the music
                     getView.playView.setImageResource(R.drawable.playlogo);
                 } else {
-                    MP.start();
+                    MP.start();// start the music
                     getView.playView.setImageResource(R.drawable.pauselogo);
                 }
             }

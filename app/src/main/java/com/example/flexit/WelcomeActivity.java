@@ -46,7 +46,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
         fBio = (EditText) findViewById(R.id.text_bio);
         nextbio = (Button) findViewById(R.id.button_nextbio);
-        myRef = myFireBaseDB.getReference("UserBios");
+        myRef = myFireBaseDB.getReference("UserBios");// making a firebase table for user bio
 
 
 
@@ -60,7 +60,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
                 UserBio user = new UserBio(userID,Bio);
 
-                if (TextUtils.isEmpty(Bio)){
+                if (TextUtils.isEmpty(Bio)){// if user does not enter anything
                     Toast.makeText(WelcomeActivity.this, "Invalid, enter a valid BIO", Toast.LENGTH_SHORT).show();
                     return;
                 }

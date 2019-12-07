@@ -196,7 +196,7 @@
                     android:gravity="center"
                     android:padding="6dp"
                     android:text="@string/normalbmi"
-                    android:textColor="#48acda"
+                    android:textColor="#056C99"
                     android:textSize="18sp" />
 
             </LinearLayout>
@@ -221,7 +221,7 @@
                     android:gravity="center"
                     android:layout_height="wrap_content"
                     android:id="@+id/normalView"
-                    android:textColor="#42cd3a"
+                    android:textColor="#0C9200"
                     android:padding="6dp"
                     android:text="less than 25" />
             </LinearLayout>
@@ -245,7 +245,7 @@
                     android:textSize="18sp"
                     android:layout_height="wrap_content"
                     android:id="@+id/overweightView"
-                    android:textColor="#F30BDE"
+                    android:textColor="#7E0470"
                     android:padding="6dp"
                     android:text="less 30" />
             </LinearLayout>
@@ -270,7 +270,7 @@
                     android:textSize="18sp"
                     android:layout_height="wrap_content"
                     android:id="@+id/obeseView"
-                    android:textColor="#ff9900"
+                    android:textColor="#E09200"
                     android:padding="6dp"
                     android:text="greater than 30" />
             </LinearLayout>
@@ -293,7 +293,7 @@
                     android:gravity="center"
                     android:layout_height="wrap_content"
                     android:id="@+id/morobese"
-                    android:textColor="#eb0400"
+                    android:textColor="#570000"
                     android:padding="6dp"
                     android:textSize="18sp"
                     android:text="greater than 30" />

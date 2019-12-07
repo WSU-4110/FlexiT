@@ -38,7 +38,6 @@
         <activity android:name=".BMIActivity" />
         <activity android:name=".ScheduleHome" />
         <activity android:name=".MonthlySchedule" />
-        <activity android:name=".StopWatch" />
         <activity android:name=".WorkoutFeed" />
         <activity android:name=".ReadDBActivity" />
         <activity android:name=".WelcomeActivity" />

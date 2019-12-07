@@ -79,20 +79,5 @@
         tools:layout_editor_absoluteX="570dp"
         tools:layout_editor_absoluteY="65dp" />
 
-    <Button
-        android:id="@+id/button_countdown"
-        android:layout_width="276dp"
-        android:layout_height="60dp"
-        android:layout_below="@+id/button_Start"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="94dp"
-        android:background="@color/action"
-        android:text="Countdown watch"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        tools:layout_editor_absoluteX="570dp"
-        tools:layout_editor_absoluteY="65dp" />
-
 
 </RelativeLayout>

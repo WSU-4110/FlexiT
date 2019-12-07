@@ -19,7 +19,6 @@ public class MainWatch extends AppCompatActivity {
     ImageView arrow;
     Chronometer timer;
     Animation round, stoparrow;
-    Button watch_countdown;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +30,6 @@ public class MainWatch extends AppCompatActivity {
         Stop = findViewById(R.id.button_stop);
         arrow = findViewById(R.id.arrow_view);
         timer = findViewById(R.id.time);
-        watch_countdown = findViewById(R.id.button_countdown);
 
         round = AnimationUtils.loadAnimation(this, R.anim.round_animate);
         stoparrow = AnimationUtils.loadAnimation(this, R.anim.stop_animate);
@@ -43,9 +41,9 @@ public class MainWatch extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 arrow.startAnimation(round);
-
+                    // arrow should go arround
                 timer.setBase(SystemClock.elapsedRealtime());
-                timer.start();
+                timer.start();// once the timer starts
             }
         });
 
@@ -54,17 +52,11 @@ public class MainWatch extends AppCompatActivity {
             public void onClick(View view) {
                 arrow.setAnimation(stoparrow);
 
-                timer.stop();
+                timer.stop();// easy implementation if the user stops the timer stop the arrow
             }
         });
 
-        watch_countdown.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-                startActivity(new Intent(getApplicationContext(), StopWatch.class));
-            }
-        });
+
 
 
     }

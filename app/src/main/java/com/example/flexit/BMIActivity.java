@@ -52,14 +52,13 @@ public class BMIActivity extends Activity {
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
+// here we get the value of the bmi from the firebase database
                         String Height = dataSnapshot.child("Height").getValue().toString();
                         String Weight = dataSnapshot.child("Weight").getValue().toString();
 
                         height.setText(Height);
                         weight.setText(Weight);
-
-
+                                // convert values to string
                         final int userweight = Integer.parseInt(Weight.toString());
                         final int userheight = Integer.parseInt(Height.toString());
 
@@ -71,6 +70,7 @@ public class BMIActivity extends Activity {
 
                         String setBMI = showUserBMI(bmiValue);
 
+                            //reun weight and height and get string value of it
                         status.setText(String.valueOf(getUserBMI(userweight,userheight)));
                         result.setText(String.valueOf(setBMI));
 
@@ -92,12 +92,12 @@ public class BMIActivity extends Activity {
     }
 
 
-
+// bmi formula to calculate bmi
     private int getUserBMI(final int userweight, final int userheight) {
         return (int) ((userweight * 703) / (userheight * userheight));
     }
 
-    // bmi
+    // bmi being called and evaluated to see what criteria the user fits in
     private String showUserBMI(float userBMI) {
 
         if (userBMI < 18.5) {

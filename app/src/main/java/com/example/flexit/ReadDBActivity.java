@@ -56,12 +56,12 @@ public class ReadDBActivity extends AppCompatActivity {
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
+                        // read these values from the database
                         String Age=dataSnapshot.child("Age").getValue().toString();
                         String Height=dataSnapshot.child("Height").getValue().toString();
                         String Weight=dataSnapshot.child("Weight").getValue().toString();
                         String FirstName = dataSnapshot.child("First Name").getValue().toString();
-                        age.setText(Age);
+                        age.setText(Age);// show these values to the user
                         height.setText(Height);
                         weight.setText(Weight);
                         name.setText(FirstName);

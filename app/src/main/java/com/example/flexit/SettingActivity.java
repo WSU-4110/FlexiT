@@ -80,17 +80,17 @@ public class SettingActivity extends AppCompatActivity {
                 final int age = Integer.parseInt(user_age.getText().toString());
                 final int height = Integer.parseInt(user_height.getText().toString());
                 final int weight = Integer.parseInt(user_weight.getText().toString());
-                final String description = user_description.getText().toString();
+                final String description = user_description.getText().toString();// thiis stuff is the code from the profile activity
 
 
                 User user = new User(userID,first,last,age,height,weight,description);
 
                 if (TextUtils.isEmpty(userId)) {
-                    getUserInfo(userID,first,last,age,height,weight,description);
+                    getUserInfo(userID,first,last,age,height,weight,description);// if the user id is empty initialize the object with these parameters
                 }
                 else {
                     UpdateInfo(userID,first,last,age,height,weight,description);
-                    Toast.makeText(getApplicationContext(),"Flexit Account Updated!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Flexit Account Updated!",Toast.LENGTH_SHORT).show();// esle update the info
 
                 }
 
@@ -102,7 +102,7 @@ public class SettingActivity extends AppCompatActivity {
 
         deleteFbUser.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view) {// delete was very easy, as we just use user. delete
                 FirebaseUser User = FirebaseAuth.getInstance().getCurrentUser();
 
                 User.delete()
@@ -129,7 +129,7 @@ public class SettingActivity extends AppCompatActivity {
     }
 
     private void getUserInfo(String uID, String fName, String lName, int age, int height, int weight, String description ) {
-        // TODO
+        // get the users info and push the key initializing a new object user
 
         if (TextUtils.isEmpty(userId)) {
             userId = myRef.push().getKey();
@@ -144,8 +144,7 @@ public class SettingActivity extends AppCompatActivity {
 
 
     private void UpdateInfo(String uID, String fName, String lName, int age, int height, int weight, String description ) {
-        // updating the user via child nodes
-        if (!TextUtils.isEmpty(fName))
+        if (!TextUtils.isEmpty(fName))// this is the magic, we update it via child nodes, set value allows users to update their info
             myRef.child(userId).child("First Name").setValue(fName);
         myRef.child(userId).child("Age").setValue(age);
 

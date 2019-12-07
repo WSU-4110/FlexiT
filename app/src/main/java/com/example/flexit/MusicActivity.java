@@ -19,7 +19,7 @@ public class MusicActivity extends AppCompatActivity {
         setContentView(R.layout.activity_music);
 
         songList = (ListView) findViewById(R.id.songList);
-        insertGetUserSong = new ArrayList<>();
+        insertGetUserSong = new ArrayList<>();      //manually adding songs, these represents, everyones favorite song
         insertGetUserSong.add(new getUserSong("A Change Is Gonna Come", "reta van fleet", R.raw.gretavan));
         insertGetUserSong.add(new getUserSong("Over The Hills And Far Away", "Night Wish", R.raw.nightwish));
         insertGetUserSong.add(new getUserSong("Ayushmann Khurrana ", "Tequila ", R.raw.teq));
@@ -30,16 +30,11 @@ public class MusicActivity extends AppCompatActivity {
         insertGetUserSong.add(new getUserSong("Lost You  ", "Zeds dead ", R.raw.zedsdead));
         insertGetUserSong.add(new getUserSong("Rivers of Babylon ", "Bony M ", R.raw.babylon));
         insertGetUserSong.add(new getUserSong("Cotton Eye Joe ", "Rednex", R.raw.conttoneye));
-        insertGetUserSong.add(new getUserSong("Cotton Eye Joe ", "Rednex", R.raw.conttoneye));
         insertGetUserSong.add(new getUserSong("Believer ", "Imagine Dragon", R.raw.believer));
 
 
 
-
-
-
-
         adapter = new UserSongAdapter(this, R.layout.content_musc, insertGetUserSong);
-        songList.setAdapter(adapter);
+        songList.setAdapter(adapter);// call out adapter class
     }
 }
