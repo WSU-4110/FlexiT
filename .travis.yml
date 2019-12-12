@@ -1,12 +1,13 @@
 language: android
 jdk: oraclejdk11
+sudo: false
 dist: trusty
 android:
   components:
     # Uncomment the lines below if you want to
     # use the latest revision of Android SDK Tools
-    # - tools
-    # - platform-tools
+    - tools
+    - platform-tools
 
     # The BuildTools version used by your project
     - build-tools-29.0.2
@@ -27,8 +28,7 @@ before_script:
   - android-wait-for-emulator
   - adb shell input keyevent 82 &
 
-script:
-  - "./gradlew clean build connectedCheck"
+script: ./gradlew connectedAndroidTest
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
@@ -40,5 +40,5 @@ cache:
     - $HOME/.android/build-cache
 
 lintOptions {
-  abortOnError false
+  abortOnError: false
 }
