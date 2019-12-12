@@ -22,7 +22,6 @@ android:
 
 
 before_install:
-  - yes | sdkmanager "platforms;android-28"
   - yes | sdkmanager "platforms;android-29"
 
 # Emulator Management: Create, Start and Wait
