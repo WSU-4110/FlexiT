@@ -7,27 +7,49 @@
     tools:context=".WorkoutFeed">
 
     <androidx.viewpager.widget.ViewPager
-        android:foregroundGravity="center"
         android:id="@+id/viewPager"
-        android:layout_centerInParent="true"
-        android:overScrollMode="never"
-        android:clipToPadding="false"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </androidx.viewpager.widget.ViewPager>
-
-<!--    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/btnOrder"
-        android:gravity="center"
-        android:layout_centerVertical="true">
-    <RatingBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:numStars="5"
-        android:stepSize="1"/>
-    </RelativeLayout>-->
+        android:clipToPadding="false"
+        android:foregroundGravity="center"
+        android:overScrollMode="never" />
+    <Button
+        android:id="@+id/button_all"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="View All Exercises"
+        android:translationX="50dp"
+        android:translationY="600dp" />
+
+    <Button
+        android:id="@+id/button_weighted"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="View Weighted Exercises"
+        android:translationX="160dp"
+        android:translationY="600dp" />
+
+    <Button
+        android:id="@+id/button_body"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="View Body Weight Exercises"
+        android:translationX="270dp"
+        android:translationY="600dp" />
+
+
+    <!--    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/btnOrder"
+            android:gravity="center"
+            android:layout_centerVertical="true">
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="1"/>
+        </RelativeLayout>-->
 
 
 

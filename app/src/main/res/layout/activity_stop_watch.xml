@@ -1,83 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/gradient"
-    android:layout_gravity="center"
-    tools:context=".MainWatch">
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:layout_gravity="center"
+	android:background="@drawable/gradient"
+	tools:context=".MainWatch">
 
 
-    <ImageView
-        android:id="@+id/bgcircle"
-        android:layout_width="276dp"
-        android:layout_height="247dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:layout_marginStart="8dp"
-        app:srcCompat="@drawable/newlogo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintHorizontal_bias="0.464"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="8dp" />
+	<Chronometer
+		android:id="@+id/time"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/bgcircle"
+		android:layout_marginTop="10dp"
+		android:gravity="center"
+		android:textColor="@color/white"
+		android:textSize="65sp"
+		app:layout_constraintHorizontal_bias="0.498" />
 
-    <ImageView
-        android:id="@+id/arrow_view"
-        android:layout_width="358dp"
-        android:layout_height="357dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="0dp"
-        app:srcCompat="@drawable/icanchor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-     />
+	<Button
+		android:id="@+id/button_Start"
+		android:layout_width="205dp"
+		android:layout_height="60dp"
+		android:layout_below="@+id/time"
+		android:layout_alignParentLeft="true"
 
-    <Chronometer
-        android:id="@+id/time"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/bgcircle"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:textSize="65sp"
-        app:layout_constraintHorizontal_bias="0.498" />
+		android:layout_marginTop="30dp"
+		android:background="#87ab69"
+		android:text="Start Timer"
+		android:textAllCaps="false"
+		android:textColor="@color/white"
+		android:textSize="25sp"
+		app:layout_constraintHorizontal_bias="0.495" />
 
-    <Button
-        android:id="@+id/button_Start"
-        android:layout_width="295dp"
-        android:layout_height="60dp"
-        android:layout_below="@+id/time"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/greenbutton"
-        android:text="Start Workout"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        app:layout_constraintHorizontal_bias="0.495" />
+	<!--<CountDownTimer
+            android:id="@+id/TimePicker"
+            android:layout_width="295dp"
+            android:layout_height="560dp"
+            android:layout_margin="5dp"
+            android:hint="Time Picler"
 
-    <Button
-        android:id="@+id/button_stop"
-        android:layout_width="295dp"
-        android:layout_height="55dp"
-        android:layout_below="@+id/button_Start"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/redbutton"
-        android:text="Finish Workout"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        tools:layout_editor_absoluteX="570dp"
-        tools:layout_editor_absoluteY="65dp" />
+            android:padding="10dp" />-->
+
+	<TextView
+		android:id="@+id/t1"
+		android:layout_width="200dp"
+		android:layout_height="20dp"
+		android:textColor="@color/white"
+		android:translationX="20dp"
+		android:translationY="280dp"
+		tools:text="hours" />
+
+	<TextView
+		android:id="@+id/laps"
+		android:layout_width="150dp"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/time"
+		android:layout_marginStart="7dp"
+		android:layout_marginTop="43dp"
+
+		android:layout_toEndOf="@+id/button_Start"
+		android:fadeScrollbars="false"
+		android:maxLines="10"
+		android:scrollbars="vertical"
+		android:textColor="@color/white"
+		android:translationX="20dp"
+		android:translationY="-30dp"
+		tools:text="hours" />
+
+	<TextView
+		android:id="@+id/t2"
+		android:layout_width="200dp"
+		android:layout_height="20dp"
+		android:textColor="@color/white"
+		android:translationX="100dp"
+		android:translationY="280dp"
+		tools:text="hours" />
+
+	<EditText
+		android:id="@+id/mins"
+		android:layout_width="60dp"
+		android:layout_height="60dp"
+		android:layout_weight="1"
+		android:background="#FFBABABA"
+		android:inputType="number"
+		android:translationX="100dp"
+		android:translationY="300dp"
+		tools:text="mins" />
+
+	<EditText
+		android:id="@+id/hours"
+		android:layout_width="60dp"
+		android:layout_height="60dp"
+		android:layout_weight="2"
+		android:background="#FFBABABA"
+		android:inputType="number"
+		android:translationX="20dp"
+		android:translationY="300dp"
+		tools:text="Hours" />
+
+	<Button
+		android:id="@+id/button_go"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:background="@drawable/greenbutton"
+		android:text="Count Down!"
+		android:textColor="@color/white"
+		android:translationX="180dp"
+		android:translationY="310dp"
+		tools:text="go" />
+
+	<TextView
+		android:id="@+id/remaining"
+		android:layout_width="400dp"
+		android:layout_height="30dp"
+		android:layout_below="@id/time"
+		android:layout_marginTop="285dp"
+		android:textColor="@color/white"
+		android:textSize="25sp" />
+
+	<Button
+		android:id="@+id/button_stop"
+		android:layout_width="205dp"
+		android:layout_height="55dp"
+		android:layout_below="@+id/button_Start"
+		android:layout_marginTop="15dp"
+		android:background="#47db69"
+		android:text="Lap"
+		android:textAllCaps="false"
+		android:textColor="@color/white"
+		android:textSize="25sp"
+		tools:layout_editor_absoluteX="570dp"
+		tools:layout_editor_absoluteY="65dp" />
 
 
 </RelativeLayout>
